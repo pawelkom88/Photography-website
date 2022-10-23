@@ -1,0 +1,72 @@
+.main {
+  height: 60vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-family: "Cormorant", sans-serif;
+  font-size: 2.5rem;
+}
+
+.explore {
+  display: flex;
+  place-items: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+  letter-spacing: 10px;
+  opacity: 0.6;
+  margin-bottom: 3rem;
+}
+
+.explore::before {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 12px;
+  background-color: #444;
+  margin-right: 8px;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav-items:hover {
+  color: #444;
+}
+
+.nav-items:hover.nav-item {
+  opacity: 0.5;
+}
+
+.nav-item {
+  position: relative;
+  margin: 1.5rem 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 20vw;
+  height: 2px;
+  transform: scaleX(0);
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition-delay: 0.3s;
+}
+
+.nav-item:hover {
+  color: #fff;
+  transition: all 0.25s ease-out;
+  opacity: 1;
+}
