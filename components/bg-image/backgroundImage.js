@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import styles from "../../layout/overlay/overlay.module.css";
 
 export default function BackgroundImage({ onHover, url: [image] }) {
