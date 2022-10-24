@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import styles from "../../layout/overlay/overlay.module.css";
 
-export default function backgroundImage({ onHover, url }) {
-  const imageOverlay = onHover ? styles.on : styles.off;
-  const [image] = url;
+export default function BackgroundImage({ onHover, url: [image] }) {
+  // const [showHighlight, setShowHighlight] = useState(false);
+
+  // useEffect(() => {
+  //   if (onHover) {
+  //     setShowHighlight(true);
+  //     setTimeout(() => {
+  //       setShowHighlight(false);
+  //     }, 1100);
+  //   }
+  // }, [onHover]);
+
+  let imageOverlay = onHover ? styles.on : styles.off;
 
   return (
     <div
@@ -10,7 +21,7 @@ export default function backgroundImage({ onHover, url }) {
       style={{
         backgroundImage: `${image?.link}`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center 15%",
       }}></div>
   );
 }

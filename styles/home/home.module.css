@@ -1,5 +1,5 @@
 .scroll {
-  width: min(1400px, 85vw);
+  width: min(1600px, 85vw);
   margin: 2rem auto;
   scrollbar-width: none;
 }

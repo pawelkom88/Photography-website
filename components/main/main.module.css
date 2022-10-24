@@ -32,6 +32,12 @@
   width: 100%;
 }
 
+.nav-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .nav-items:hover {
   color: #444;
 }
@@ -42,7 +48,7 @@
 
 .nav-item {
   position: relative;
-  margin: 1.5rem 0;
+  padding: .5rem 0;
   transition: opacity 0.2s ease-in-out;
 }
 

@@ -8,7 +8,7 @@ const url = [
   "Business photography",
   "Events and Festivals",
   "Properties and interiors",
-  "Exhibitions",
+  "Themed",
 ];
 
 // chek SEO links linkedin
