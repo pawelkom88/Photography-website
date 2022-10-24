@@ -1,4 +1,4 @@
-import styles from "../overlay/overlay.module.css";
+import styles from "../../layout/overlay/overlay.module.css";
 
 export default function backgroundImage({onHover, url}) {
   const imageOverlay = onHover ? styles.on : styles.off;
