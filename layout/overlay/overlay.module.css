@@ -9,7 +9,7 @@
 .off {
   filter: brightness(50%);
   opacity: 0;
-  transform: scale(1.5);
+  transform: scale(1.2);
   transform-origin: 50% 50%;
   transition: opacity 0.75s ease 0s, transform 1.35s linear;
   z-index: 21;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./main.module.css";
 
-// move to utulities
+// move to utilities
 const url = [
   "Weddings",
   "Portraits",
@@ -11,18 +11,20 @@ const url = [
   "Exhibitions",
 ];
 
-export default function Main({onMouseHover}) {
+// chek SEO links linkedin
+
+export default function Main({ onMouseOver, onMouseOut }) {
   return (
     <main className={styles.main}>
       <nav className={styles.nav}>
         <span className={styles.explore}>EXPLORE</span>
         <ul className={styles["nav-items"]}>
-          {url.map(link => {
+          {url.map((link, i) => {
             return (
               <li
                 key={link}
-                onMouseEnter={() => onMouseHover(true)}
-                onMouseLeave={() => onMouseHover(false)}
+                onMouseEnter={() => onMouseOver(i)}
+                onMouseLeave={onMouseOut}
                 className={styles["nav-item"]}>
                 <Link href={`/${link.replace(/ /g, "-")}`}>
                   <a>{link}</a>
