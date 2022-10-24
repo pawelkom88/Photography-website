@@ -2,7 +2,7 @@
 // import Image from 'next/image'
 import "@fontsource/cinzel";
 import "@fontsource/raleway";
-import "@fontsource/Montserrat";
+import "@fontsource/montserrat";
 import "@fontsource/cormorant";
 
 import Header from "../components/header/Header";
@@ -12,7 +12,7 @@ import {useState} from "react";
 // import {motion} from "framer-motion";
 import styles from "../styles/home/home.module.css";
 import Overlay from "../layout/overlay/Overlay";
-import BackgroundImage from "../components/bg-image/BackgroundImage";
+import BackgroundImage from "../components/bg-image/backgroundImage";
 
 export default function Home() {
   const [onHover, setOnHover] = useState(false);
