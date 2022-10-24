@@ -20,8 +20,6 @@ const urls = [
   { id: 3, link: "url(/assets/images/events.webp)" },
   { id: 4, link: "url(/assets/images/properties.webp)" },
   { id: 5, link: "url(/assets/images/themed.webp)" },
-
-  ,
 ];
 
 export default function Home() {
