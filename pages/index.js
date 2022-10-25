@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Loader from "../components/loader/Loader";
+import Panels from "../components/panels/Panels";
 
-export default function Home() {
+export default function LoadingPage() {
   const router = useRouter();
 
   useEffect(() => {
@@ -11,5 +12,10 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [router]);
 
-  return <Loader />;
+  return (
+    <>
+      <Panels />
+      <Loader />;
+    </>
+  );
 }

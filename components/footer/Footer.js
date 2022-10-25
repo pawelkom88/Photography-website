@@ -1,8 +1,8 @@
 import ContactIcon from "../contact-icon/ContactIcon";
 import styles from "./footer.module.css";
 
-export default function Footer({onHover}) {
-  const overlayColor = onHover ? "white" : "grey";
+export default function Footer({ onHover, matches }) {
+  const overlayColor = onHover && !matches ? "white" : "grey";
 
   return (
     <footer className={styles.footer}>
@@ -10,7 +10,7 @@ export default function Footer({onHover}) {
         Discover the collections of modern, captivating <br />
         and uniquely beautiful photographs.
       </p>
-      <ContactIcon onHover={onHover} />
+      {!matches && <ContactIcon onHover={onHover} />}
     </footer>
   );
 }

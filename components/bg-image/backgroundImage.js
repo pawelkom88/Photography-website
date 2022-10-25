@@ -1,29 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "../../layout/overlay/overlay.module.css";
 
-export default function BackgroundImage({ onHover, url: [image] }) {
-  // const [showHighlight, setShowHighlight] = useState(false);
+export default function BackgroundImage({ onHover, position }) {
+  useEffect(() => {
+    const bgImages = Array.from(document.querySelectorAll(".bg-image"));
 
-  // useEffect(() => {
-  //   const bgImage = document.querySelector(".bg-image");
-  //   if (onHover) {
-  //     bgImage.classList.add(`${styles.on}`);
-  //     bgImage.classList.remove(`${styles.off}`);
-  //   } else {
-  //     bgImage.classList.add(`${styles.off}`);
-  //     bgImage.classList.remove(`${styles.on}`);
-  //   }
-  // }, [onHover]);
+    bgImages.forEach((img, i) => {
+      if (onHover && position === i) {
+        img.classList.add(`${styles.on}`);
+        img.classList.remove(`${styles.off}`);
+      } else {
+        img.classList.add(`${styles.off}`);
+        img.classList.remove(`${styles.on}`);
+      }
+    });
+  }, [onHover, position]);
 
-  let imageOverlay = onHover ? styles.on : styles.off;
+  // let imageOverlay = onHover ? styles.on : styles.off;
 
   return (
-    <div
-      className={`${imageOverlay} overlay`}
-      style={{
-        backgroundImage: `${image?.link}`,
-        backgroundSize: "cover",
-        backgroundPosition: "center 15%",
-      }}></div>
+    <>
+      <div className={`bg-image ${styles["bg-image1"]} overlay`}></div>
+      <div className={`bg-image ${styles["bg-image2"]} overlay`}></div>
+      <div className={`bg-image ${styles["bg-image3"]} overlay`}></div>
+      <div className={`bg-image ${styles["bg-image4"]} overlay`}></div>
+      <div className={`bg-image ${styles["bg-image5"]} overlay`}></div>
+      <div className={`bg-image ${styles["bg-image6"]} overlay`}></div>
+    </>
   );
 }

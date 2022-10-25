@@ -2,6 +2,7 @@
   --primary-clr: #444;
   --secondary-clr: #fff;
   --teriary-clr: #000;
+  --primary-font: "Questrial", san-serif;
 }
 
 *,
@@ -22,7 +23,7 @@ ul li {
 }
 
 body {
-  font-family: "Questrial", sans-serif;
+  font-family: var(--primary-font);
   text-rendering: optimizeSpeed;
 }
 
@@ -96,4 +97,10 @@ select {
   inset: 0;
   overflow: hidden;
   z-index: -1;
+}
+
+.bg-image {
+  background-size: 100%;
+  background-position: center 15%;
+  opacity: 0;
 }

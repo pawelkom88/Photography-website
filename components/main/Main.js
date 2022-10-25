@@ -1,23 +1,16 @@
 import Link from "next/link";
 import styles from "./main.module.css";
-
-// move to utilities
-const url = [
-  "Weddings",
-  "Portraits",
-  "Business photography",
-  "Events and Festivals",
-  "Properties and interiors",
-  "Themed",
-];
+import { url } from "../../helpers/helpers";
 
 // chek SEO links linkedin
 
-export default function Main({ onMouseOver, onMouseOut }) {
+export default function Main({ onMouseOver, onMouseOut, onHover, matches }) {
+  const overlayColor = onHover && !matches ? "white" : "grey";
+
   return (
     <main className={styles.main}>
       <nav className={styles.nav}>
-        <span className={styles.explore}>EXPLORE</span>
+        <span className={`${styles.explore} ${overlayColor}`}>EXPLORE</span>
         <ul className={styles["nav-items"]}>
           {url.map((link, i) => {
             return (

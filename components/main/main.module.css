@@ -8,7 +8,7 @@
 .explore {
   display: flex;
   place-items: center;
-  font-family: "Questrial", sans-serif;
+  font-family: var(--primary-font);
   font-size: 0.8rem;
   font-weight: 100;
   letter-spacing: 10px;
@@ -21,14 +21,14 @@
   content: "";
   height: 1px;
   width: 12px;
-  background-color: #444;
+  background-color: var(--primary-clr);
   margin-right: 8px;
 }
 
 .nav {
   width: 100%;
   font-family: "Marcellus SC", sans-serif;
-  font-size: clamp(2rem, 0.6rem + 2.2vw, 3.2rem);
+  font-size: clamp(1.8rem, 0.6rem + 2.2vw, 3.2rem);
   color: var(--primary-clr);
 }
 

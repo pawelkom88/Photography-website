@@ -1,4 +1,4 @@
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./logo.module.css";
 
@@ -11,13 +11,13 @@ export default function Logo() {
     end: {
       opacity: 1,
       y: "0",
-      transition: {duration: 1.5},
+      transition: { duration: 1.5 },
     },
   };
 
   return (
     <h1 className={styles.logo}>
-      <Link href="/">
+      <Link href="/main">
         <a>
           <motion.span initial="start" animate="end" variants={variants}>
             KAMILA

@@ -1,13 +1,11 @@
 .footer {
   height: 15vh;
-}
-.footer {
   position: relative;
 
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
   line-height: 1.8;
-  
+
   padding-top: 3rem;
   margin-left: 1rem;
   letter-spacing: 1px;

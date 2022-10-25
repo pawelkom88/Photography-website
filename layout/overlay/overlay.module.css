@@ -14,3 +14,27 @@
   transition: opacity 0.75s ease 0s, transform 1.35s linear;
   z-index: 21;
 }
+
+.bg-image1 {
+  background-image: url("/assets/images/wedding.webp");
+}
+
+.bg-image2 {
+  background-image: url("/assets/images/portraits.webp");
+}
+
+.bg-image3 {
+  background-image: url("/assets/images/business.webp");
+}
+
+.bg-image4 {
+  background-image: url("/assets/images/events.webp");
+}
+
+.bg-image5 {
+  background-image: url("/assets/images/properties.webp");
+}
+
+.bg-image6 {
+  background-image: url("/assets/images/themed.webp");
+}

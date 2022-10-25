@@ -1,6 +1,15 @@
 .header {
+  position: relative;
   height: 15vh;
   display: flex;
   justify-content: space-between;
+  gap: 3rem;
   align-items: center;
+}
+
+@media (max-width: 800px) {
+  .header {
+    height: 10vh;
+    margin-bottom: 3rem;
+  }
 }

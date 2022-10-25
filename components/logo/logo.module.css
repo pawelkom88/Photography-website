@@ -1,6 +1,6 @@
 .logo {
-  font-family: "Questrial", sans-serif;
-  font-size: 1.3rem;
+  font-size: clamp(0.8rem, 0.5rem + 1vw, 1.3rem);
+  line-height: 1.5;
   font-weight: 100;
   letter-spacing: 10px;
 }
