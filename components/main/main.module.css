@@ -3,15 +3,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  font-family: "Cormorant", sans-serif;
-  font-size: 2.5rem;
 }
 
 .explore {
   display: flex;
   place-items: center;
-  font-family: "Raleway", sans-serif;
+  font-family: "Questrial", sans-serif;
   font-size: 0.8rem;
   font-weight: 100;
   letter-spacing: 10px;
@@ -30,6 +27,9 @@
 
 .nav {
   width: 100%;
+  font-family: "Marcellus SC", sans-serif;
+  font-size: clamp(2rem, 0.6rem + 2.2vw, 3.2rem);
+  color: var(--primary-clr);
 }
 
 .nav-items {
@@ -39,7 +39,7 @@
 }
 
 .nav-items:hover {
-  color: #444;
+  color: var(--primary-clr);
 }
 
 .nav-items:hover.nav-item {
@@ -48,7 +48,7 @@
 
 .nav-item {
   position: relative;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   transition: opacity 0.2s ease-in-out;
 }
 
@@ -60,7 +60,7 @@
   transform: scaleX(0);
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: var(--secondary-clr);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -72,7 +72,7 @@
 }
 
 .nav-item:hover {
-  color: #fff;
+  color: var(--secondary-clr);
   transition: all 0.25s ease-out;
   opacity: 1;
 }

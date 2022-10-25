@@ -1,5 +1,7 @@
 :root {
-  --p: 0;
+  --primary-clr: #444;
+  --secondary-clr: #fff;
+  --teriary-clr: #000;
 }
 
 *,
@@ -20,7 +22,7 @@ ul li {
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Questrial", sans-serif;
   text-rendering: optimizeSpeed;
 }
 
@@ -70,19 +72,19 @@ select {
 }
 
 .white {
-  color: #fff;
+  color: var(--secondary-clr);
   transition: color 0.75s linear;
   transition-delay: 0.2s;
 }
 
 .black {
-  color: #000;
+  color: var(--teriary-clr);
   transition: color 0.75s linear;
   transition-delay: 0.2s;
 }
 
 .grey {
-  color: #444;
+  color: var(--primary-clr);
   transition: color 0.75s linear;
   transition-delay: 0.2s;
 }

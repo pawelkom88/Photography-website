@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import styles from "./loader.module.css";
 
 export default function Loader() {
   const word1 = "KAMILAJ".split("");
@@ -29,15 +30,8 @@ export default function Loader() {
 
   return (
     <div
-      style={{
-        textAlign: "center",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: "3rem",
-        letterSpacing: "45px",
-      }}>
+      className={styles.container}>
+
       <motion.div
         style={{
           marginRight: "1rem",
@@ -51,6 +45,7 @@ export default function Loader() {
           </motion.span>
         ))}
       </motion.div>
+
       <motion.div variants={container} initial="hidden" animate="visible">
         {word2.map((word, index) => (
           <motion.span variants={child} key={index}>
@@ -58,6 +53,7 @@ export default function Loader() {
           </motion.span>
         ))}
       </motion.div>
+      
     </div>
   );
 }

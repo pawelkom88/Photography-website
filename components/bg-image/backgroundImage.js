@@ -1,15 +1,17 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../layout/overlay/overlay.module.css";
 
 export default function BackgroundImage({ onHover, url: [image] }) {
   // const [showHighlight, setShowHighlight] = useState(false);
 
   // useEffect(() => {
+  //   const bgImage = document.querySelector(".bg-image");
   //   if (onHover) {
-  //     setShowHighlight(true);
-  //     setTimeout(() => {
-  //       setShowHighlight(false);
-  //     }, 1100);
+  //     bgImage.classList.add(`${styles.on}`);
+  //     bgImage.classList.remove(`${styles.off}`);
+  //   } else {
+  //     bgImage.classList.add(`${styles.off}`);
+  //     bgImage.classList.remove(`${styles.on}`);
   //   }
   // }, [onHover]);
 

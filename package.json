@@ -11,7 +11,9 @@
   "dependencies": {
     "@fontsource/cinzel": "^4.5.9",
     "@fontsource/cormorant": "^4.5.9",
+    "@fontsource/marcellus-sc": "^4.5.11",
     "@fontsource/montserrat": "^4.5.13",
+    "@fontsource/questrial": "^4.5.10",
     "@fontsource/raleway": "^4.5.11",
     "framer-motion": "^7.6.1",
     "next": "12.3.1",
