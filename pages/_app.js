@@ -1,11 +1,22 @@
-import {AnimatePresence} from "framer-motion";
+import { motion } from "framer-motion";
 import "../styles/globals.css";
 
-function MyApp({Component, pageProps}) {
+function MyApp({ Component, pageProps, router }) {
   return (
-    <AnimatePresence>
+    <motion.div
+      key={router.route}
+      initial="pageInitial"
+      animate="pageAnimate"
+      variants={{
+        pageInitial: {
+          opacity: 0,
+        },
+        pageAnimate: {
+          opacity: 1,
+        },
+      }}>
       <Component {...pageProps} />
-    </AnimatePresence>
+    </motion.div>
   );
 }
 

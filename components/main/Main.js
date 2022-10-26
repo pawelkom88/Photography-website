@@ -19,7 +19,7 @@ export default function Main({ onMouseOver, onMouseOut, onHover, matches }) {
                 onMouseEnter={() => onMouseOver(i)}
                 onMouseLeave={onMouseOut}
                 className={styles["nav-item"]}>
-                <Link href={`/${link.replace(/ /g, "-")}`}>
+                <Link href={`/${link.toLowerCase().replace(/ /g, "-")}`}>
                   <a>{link}</a>
                 </Link>
               </li>
