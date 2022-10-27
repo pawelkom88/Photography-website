@@ -8,7 +8,7 @@ export default function Loader({ onLoading }) {
 
   const container = {
     initial: { opacity: 0 },
-    animate:  {
+    animate: {
       opacity: 1,
       transition: { staggerChildren: 0.1, delayChildren: 0.1 },
     },

@@ -6,13 +6,17 @@
   justify-content: center;
   align-items: center;
 
-  font-size: clamp(1rem, 0.4667rem + 2.1333vw, 3rem);
+  font-size: clamp(1.2rem, 0.4667rem + 2.1333vw, 3rem);
   font-family: "Marcellus SC", sans-serif;
   color: var(--primary-clr);
   line-height: 1.8;
   letter-spacing: 10px;
+}
 
-  scrollbar-width: none;
+@media (max-width: 800px) {
+  .container {
+    letter-spacing: .1px;
+  }
 }
 
 .container:first-child {
