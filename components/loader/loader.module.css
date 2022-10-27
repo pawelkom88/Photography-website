@@ -11,6 +11,8 @@
   color: var(--primary-clr);
   line-height: 1.8;
   letter-spacing: 10px;
+
+  scrollbar-width: none;
 }
 
 .container:first-child {

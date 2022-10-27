@@ -1,59 +1,65 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./loader.module.css";
 
-export default function Loader() {
+export default function Loader({ onLoading }) {
   const word1 = "KAMILAJ".split("");
   const word2 = "PHOTOGRAPHY".split("");
 
   const container = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
+    initial: { opacity: 0 },
+    animate:  {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.2 * i },
-    }),
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: "linear",
+      },
+    },
   };
 
   const child = {
-    visible: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
       opacity: 1,
       transition: {
-        duration: 2,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      transition: {
-        duration: 2,
+        duration: 2.5,
+        ease: "linear",
       },
     },
   };
 
   return (
-    <div
+    <motion.div
+      variants={container}
+      animate="animate"
+      initial="initial"
+      exit="exit"
+      onAnimationComplete={() => onLoading(false)}
       className={styles.container}>
-
-      <motion.div
+      <div
         style={{
           marginRight: "1rem",
-        }}
-        variants={container}
-        initial="hidden"
-        animate="visible">
+        }}>
         {word1.map((word, index) => (
           <motion.span variants={child} key={index}>
             {word}
           </motion.span>
         ))}
-      </motion.div>
+      </div>
 
-      <motion.div variants={container} initial="hidden" animate="visible">
+      <div>
         {word2.map((word, index) => (
           <motion.span variants={child} key={index}>
             {word}
           </motion.span>
         ))}
-      </motion.div>
-      
-    </div>
+      </div>
+    </motion.div>
   );
 }

@@ -25,6 +25,7 @@ ul li {
 body {
   font-family: var(--primary-font);
   text-rendering: optimizeSpeed;
+  overflow: hidden;
 }
 
 img,
@@ -100,7 +101,7 @@ select {
 }
 
 .bg-image {
-  background-size: 100%;
+  background-size: cover;
   background-position: center 15%;
   opacity: 0;
 }
