@@ -1,15 +1,8 @@
 // fonts
-// import "@fontsource/cinzel";
-// import "@fontsource/raleway";
-// import "@fontsource/montserrat";
-// import "@fontsource/cormorant";
 import "@fontsource/questrial";
 import "@fontsource/marcellus-sc";
-// import "@fontsource/josefin-sans";
-// import "@fontsource/crimson-pro";
-
 // hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useMatchMedia from "../hooks/useMatchMedia";
 
 // components
@@ -30,14 +23,20 @@ import home from "../styles/home/home.module.css";
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
 import { screenSize } from "../helpers/helpers";
+import { parseCookies } from "../lib/parseCookies";
+import Cookies from "js-cookie";
 
-export default function Home() {
+export default function Home({ initialValue = true }) {
   const [isHovering, setIsHovering] = useState(false);
   const [position, setPosition] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => JSON.parse(initialValue));
   const { matches } = useMatchMedia(screenSize);
 
   const hoverColor = isHovering && !matches ? "white" : "grey";
+
+  useEffect(() => {
+    Cookies.set("loader", JSON.stringify(loading));
+  }, [loading]);
 
   function handleMouseOver(id) {
     setIsHovering(true);
@@ -69,7 +68,7 @@ export default function Home() {
       opacity: 0,
       y: -20,
       transition: {
-        ease: "easeInOut",
+        ease: "linear",
         duration: 0.8,
       },
     },
@@ -79,7 +78,7 @@ export default function Home() {
     <AnimatePresence>
       {loading ? (
         <motion.div key="loader">
-          <Loader onLoading={setLoading} />
+          <Loader loading={loading} onLoading={setLoading} />
         </motion.div>
       ) : (
         <motion.div variants={container} initial="hidden" animate="show" className={home.scroll}>
@@ -110,3 +109,11 @@ export default function Home() {
     </AnimatePresence>
   );
 }
+
+Home.getInitialProps = ({ req }) => {
+  const cookies = parseCookies(req);
+
+  return {
+    initialValue: cookies.loader,
+  };
+};

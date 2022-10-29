@@ -1,10 +1,11 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./loader.module.css";
 
-export default function Loader({ onLoading }) {
-  const word1 = "KAMILAJ".split("");
+export default function Loader({ loading, onLoading }) {
+  const word1 = "JOHN DOE".split("");
   const word2 = "PHOTOGRAPHY".split("");
+
+  console.log(loading);
 
   const container = {
     initial: { opacity: 0 },

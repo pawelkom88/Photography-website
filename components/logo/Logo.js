@@ -7,7 +7,7 @@ export default function Logo({ variants }) {
     <motion.h1 variants={variants} className={styles.logo}>
       <Link href="/">
         <a>
-          <span>KAMILA JARCZAK</span>
+          <span>JOHN DOE</span>
         </a>
       </Link>
     </motion.h1>
