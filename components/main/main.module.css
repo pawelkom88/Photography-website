@@ -27,7 +27,7 @@
 
 .nav {
   width: 100%;
-  font-family: "Marcellus SC", sans-serif;
+  font-family: var(--secondary-font);
   font-weight: 200;
   font-size: clamp(1.8rem, 0.6rem + 2.2vw, 3rem);
   color: var(--primary-clr);

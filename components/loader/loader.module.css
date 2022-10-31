@@ -7,7 +7,7 @@
   align-items: center;
 
   font-size: clamp(1.2rem, 0.4667rem + 2.1333vw, 3rem);
-  font-family: "Marcellus SC", sans-serif;
+  font-family: var(--secondary-font);
   color: var(--primary-clr);
   line-height: 1.8;
   letter-spacing: 10px;
@@ -15,7 +15,7 @@
 
 @media (max-width: 800px) {
   .container {
-    letter-spacing: .1px;
+    letter-spacing: 0.1px;
   }
 }
 
