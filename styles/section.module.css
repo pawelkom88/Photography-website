@@ -1,0 +1,41 @@
+.section {
+  position: relative;
+  width: 100%;
+  /* header height + header margin */
+  height: calc(100vh - 12vh - 4rem);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -o-object-fit: cover;
+  object-fit: cover;
+
+  filter: brightness(50%);
+}
+
+.section-heading {
+  position: absolute;
+  bottom: 3rem;
+  left: 4rem;
+
+  font-size: 4rem;
+  font-family: var(--secondary-font);
+  color: var(--secondary-clr);
+
+  z-index: 1;
+}
+
+.image-wrapper  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
