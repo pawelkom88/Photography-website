@@ -1,11 +1,8 @@
-// fonts
-import "@fontsource/questrial";
-import "@fontsource/marcellus-sc";
 // hooks
 import { useState, useEffect } from "react";
-import useMatchMedia from "../hooks/useMatchMedia";
 
 // components
+import Link from "next/link";
 import Header from "../layout/header/Header";
 import Footer from "../layout/footer/Footer";
 import Main from "../components/main/Main";
@@ -17,25 +14,21 @@ import Logo from "../components/logo/Logo";
 import Hamburger from "../components/hamburger/Hamburger";
 import ContactIcon from "../components/contact-icon/ContactIcon";
 
-// styles
-import home from "../styles/home/home.module.css";
-
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
-import { screenSize } from "../helpers/helpers";
+import { container, item } from "../helpers/helpers";
 import { parseCookies } from "../lib/parseCookies";
 import Cookies from "js-cookie";
 
-export default function Home({ initialValue = true }) {
+export default function Home({ initialValue = true, mediaQueries }) {
   const [isHovering, setIsHovering] = useState(false);
   const [position, setPosition] = useState(null);
   const [loading, setLoading] = useState(() => JSON.parse(initialValue));
-  const { matches } = useMatchMedia(screenSize);
 
-  const hoverColor = isHovering && !matches ? "white" : "grey";
+  const hoverColor = isHovering && !mediaQueries ? "white" : "grey";
 
   useEffect(() => {
-    Cookies.set("loader", JSON.stringify(loading));
+    Cookies.set("loader", JSON.stringify(loading), { expires: 7 });
   }, [loading]);
 
   function handleMouseOver(id) {
@@ -48,44 +41,26 @@ export default function Home({ initialValue = true }) {
     setPosition(null);
   }
 
-  const container = {
-    show: {
-      transition: { staggerChildren: 0.5, delay: 0.1 },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 1.6,
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: -20,
-      transition: {
-        ease: "linear",
-        duration: 0.8,
-      },
-    },
-  };
-
   return (
     <AnimatePresence>
       {loading ? (
         <motion.div key="loader">
-          <Loader loading={loading} onLoading={setLoading} />
+          <Loader onLoading={setLoading} />
         </motion.div>
       ) : (
-        <motion.div variants={container} initial="hidden" animate="show" className={home.scroll}>
+        <motion.div variants={container} initial="hidden" animate="show" className="container">
           <Header variants={item} className={hoverColor}>
             <Logo variants={item} />
             <div>
-              {!matches ? <Button className={hoverColor}>PORTFOLIO</Button> : <Hamburger />}
+              {!mediaQueries ? (
+                <Link href="/portfolio" className={hoverColor}>
+                  <a>
+                    <Button>PORTFOLIO</Button>
+                  </a>
+                </Link>
+              ) : (
+                <Hamburger />
+              )}
             </div>
           </Header>
           <Main
@@ -99,10 +74,10 @@ export default function Home({ initialValue = true }) {
               Discover the collections of modern, captivating <br />
               and uniquely beautiful photographs.
             </p>
-            {!matches && <ContactIcon onHover={isHovering} />}
+            {!mediaQueries && <ContactIcon onHover={isHovering} />}
           </Footer>
           <Overlay>
-            {!matches && <BackgroundImage position={position} onHover={isHovering} />}
+            {!mediaQueries && <BackgroundImage position={position} onHover={isHovering} />}
           </Overlay>
         </motion.div>
       )}
