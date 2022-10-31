@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import styles from "./main.module.css";
 import { url } from "../../helpers/helpers";
 
-// chek SEO links linkedin
-
 export default function Main({ onMouseOver, onMouseOut, variants, hoverColor }) {
   return (
     <main className={styles.main}>
