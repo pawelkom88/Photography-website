@@ -16,8 +16,6 @@ export default function BackgroundImage({ onHover, position }) {
     });
   }, [onHover, position]);
 
-  // let imageOverlay = onHover ? styles.on : styles.off;
-
   return (
     <>
       <div className={`bg-image ${styles["bg-image1"]} overlay`}></div>
