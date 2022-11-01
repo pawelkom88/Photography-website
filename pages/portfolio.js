@@ -10,19 +10,22 @@ import GridImage from "../components/grid-image/GridImage";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 // helpers
-import { screenSize, posts } from "../helpers/helpers";
+import { gridImages, screenSizes } from "../helpers/helpers";
 
 export default function Portfolio({ mediaQueries }) {
+  const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
+    return { [res]: columnNum };
+  });
+
   return (
     <div className="container">
       <Header>
         <Logo />
         <div>
           {!mediaQueries ? (
-            <Link href="/">
+            <Link href="/about">
               <a>
-                <Button>????</Button>
-                {/* categories ? */}
+                <Button>ABOUT</Button>
               </a>
             </Link>
           ) : (
@@ -31,10 +34,10 @@ export default function Portfolio({ mediaQueries }) {
         </div>
       </Header>
       <main>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
           <Masonry gutter="20px">
-            {posts.map(post => {
-              return <GridImage key={post.id} image={post} />;
+            {gridImages.map(image => {
+              return <GridImage key={image.id} image={image} />;
             })}
           </Masonry>
         </ResponsiveMasonry>

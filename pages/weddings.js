@@ -10,7 +10,8 @@ import Header from "../layout/header/Header";
 import Button from "../components/button/Button";
 import Hamburger from "../components/hamburger/Hamburger";
 
-// styles
+// helpers
+import { urls } from "../helpers/helpers";
 
 export default function Weddings({ mediaQueries }) {
   return (
@@ -20,9 +21,9 @@ export default function Weddings({ mediaQueries }) {
           <Logo></Logo>
           <div>
             {!mediaQueries ? (
-              <Link href="/portfolio">
+              <Link href="/about">
                 <a>
-                  <Button>PORTFOLIO</Button>
+                  <Button>ABOUT</Button>
                 </a>
               </Link>
             ) : (
@@ -32,11 +33,11 @@ export default function Weddings({ mediaQueries }) {
         </Header>
       </div>
       <SectionHero
-        section="Weddings"
-        imageSrc="/assets/images/w1.webp"
-        videoSrc="/assets/videos/wedding_video.mp4"
+        section={urls[0].linkName}
+        imageSrc={urls[0].link.slice(4, -1)}
+        videoSrc={urls[0].video}
       />
-      <SectionDescribtion title="Wedding" />
+      <SectionDescribtion title={urls[0].linkName} />
     </>
   );
 }
