@@ -8,8 +8,10 @@ import Logo from "../components/logo/Logo";
 import Header from "../layout/header/Header";
 import Button from "../components/button/Button";
 import Hamburger from "../components/hamburger/Hamburger";
+import SectionDescribtion from "../components/section-description/SectionDescribtion";
 
-// styles
+// helpers
+import { urls } from "../helpers/helpers";
 
 export default function Portrait({ mediaQueries }) {
   return (
@@ -19,9 +21,9 @@ export default function Portrait({ mediaQueries }) {
           <Logo></Logo>
           <div>
             {!mediaQueries ? (
-              <Link href="/portfolio">
+              <Link href="/about">
                 <a>
-                  <Button>PORTFOLIO</Button>
+                  <Button>ABOUT</Button>
                 </a>
               </Link>
             ) : (
@@ -31,16 +33,11 @@ export default function Portrait({ mediaQueries }) {
         </Header>
       </div>
       <SectionHero
-        section="Portraits"
-        imageSrc="/assets/images/p1.webp"
-        videoSrc="/assets/videos/portrait_video.mp4"
+        section={urls[1].linkName}
+        imageSrc={urls[1].link.slice(4, -1)}
+        videoSrc={urls[1].video}
       />
-      <section className="container">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rerum consequatur
-        quibusdam quod molestiae quae deleniti voluptatibus, reiciendis obcaecati quaerat dicta iure
-        tenetur at adipisci nostrum delectus, inventore consectetur accusamus nisi deserunt
-        consequuntur maiores necessitatibus quas. Excepturi doloremque libero officiis?
-      </section>
+      <SectionDescribtion title={urls[1].linkName} />
     </>
   );
 }
