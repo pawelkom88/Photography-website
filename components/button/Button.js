@@ -1,5 +1,9 @@
 import styles from "./button.module.css";
 
-export default function Button({children, className}) {
-  return <button className={`${styles.button} ${className}`}>{children}</button>;
+export default function Button({ children, className = "", line = false }) {
+  return (
+    <button className={`${styles.button}  ${line ? styles.line : ""} ${className}`}>
+      {children}
+    </button>
+  );
 }

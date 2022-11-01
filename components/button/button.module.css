@@ -1,4 +1,5 @@
 .button {
+  position: relative;
   font-size: 0.8rem;
   letter-spacing: 5px;
   font-weight: 500;
@@ -14,4 +15,24 @@
   background: var(--primary-clr);
   color: var(--secondary-clr);
   transition: all 0.3s ease-in-out;
+}
+
+.line {
+  padding: 0.8rem 4rem;
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  right: -25px;
+  width: 45px;
+  height: 2px;
+  background-color: var(--primary-clr);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.line:hover::after {
+  background-color: rgb(167, 167, 167);
+  transition: background-color 0.3s ease-in-out;
 }
