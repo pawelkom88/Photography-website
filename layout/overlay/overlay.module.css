@@ -14,27 +14,3 @@
   transition: opacity 0.75s ease 0s, transform 1.35s linear;
   z-index: 21;
 }
-
-.bg-image1 {
-  background-image: url("/assets/images/w1.webp");
-}
-
-.bg-image2 {
-  background-image: url("/assets/images/p1.webp");
-}
-
-.bg-image3 {
-  background-image: url("/assets/images/b1.webp");
-}
-
-.bg-image4 {
-  background-image: url("/assets/images/e1.webp");
-}
-
-.bg-image5 {
-  background-image: url("/assets/images/pp1.webp");
-}
-
-.bg-image6 {
-  background-image: url("/assets/images/t1.webp");
-}
