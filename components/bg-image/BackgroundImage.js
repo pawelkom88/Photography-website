@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import Image from "next/image";
+import { urls } from "../../helpers/helpers";
 import styles from "../../layout/overlay/overlay.module.css";
 
 export default function BackgroundImage({ onHover, position }) {
@@ -18,12 +20,26 @@ export default function BackgroundImage({ onHover, position }) {
 
   return (
     <>
-      <div className={`bg-image ${styles["bg-image1"]} overlay`}></div>
-      <div className={`bg-image ${styles["bg-image2"]} overlay`}></div>
-      <div className={`bg-image ${styles["bg-image3"]} overlay`}></div>
-      <div className={`bg-image ${styles["bg-image4"]} overlay`}></div>
-      <div className={`bg-image ${styles["bg-image5"]} overlay`}></div>
-      <div className={`bg-image ${styles["bg-image6"]} overlay`}></div>
+      {urls.map(({ id, link, linkName }) => {
+        return (
+          <div key={id} className="bg-image overlay">
+            <Image
+              src={link.slice(4, -1)}
+              layout="fill"
+              objectFit="cover"
+              alt={`${linkName} photo`}
+            />
+          </div>
+        );
+      })}
     </>
+    // <>
+    //   <div className={`bg-image ${styles["bg-image1"]} overlay`}></div>
+    //   <div className={`bg-image ${styles["bg-image2"]} overlay`}></div>
+    //   <div className={`bg-image ${styles["bg-image3"]} overlay`}></div>
+    //   <div className={`bg-image ${styles["bg-image4"]} overlay`}></div>
+    //   <div className={`bg-image ${styles["bg-image5"]} overlay`}></div>
+    //   <div className={`bg-image ${styles["bg-image6"]} overlay`}></div>
+    // </>
   );
 }
