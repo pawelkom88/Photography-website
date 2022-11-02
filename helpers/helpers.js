@@ -26,25 +26,30 @@ export const urls = [
     id: 2,
     link: "url(/assets/images/b1.webp)",
     linkName: "Business Photography",
-    video: "/assets/videos/",
+    video: "/assets/videos/business_video.mp4",
   },
   {
     id: 3,
     link: "url(/assets/images/e1.webp)",
     linkName: "Events and Festivals",
-    video: "/assets/videos/",
+    video: "/assets/videos/events_video.mp4",
   },
-  { id: 4, link: "url(/assets/images/t1.webp)", linkName: "Themed", video: "/assets/videos/" },
+  {
+    id: 4,
+    link: "url(/assets/images/t1.webp)",
+    linkName: "Themed",
+    video: "/assets/videos/themed_video.mp4",
+  },
   {
     id: 5,
     link: "url(/assets/images/pp1.webp)",
     linkName: "Properties and Interiors",
-    video: "/assets/videos/",
+    video: "/assets/videos/property_video.mp4",
   },
 ];
 
 // extract link to images from url array and create a new one
-const images = [];
+export const images = [];
 
 urls.forEach(({ link }) => {
   images.push(link);
