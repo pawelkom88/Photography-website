@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Image from "next/image";
-import Overlay from "../../layout/overlay/Overlay";
 import styles from "../../styles/section.module.css";
 import { motion } from "framer-motion";
 
@@ -21,11 +20,9 @@ export default function SectionHero({ videoSrc, imageSrc, section }) {
   return (
     <section className={styles.section}>
       {!isPlaying ? (
-        <Overlay>
-          <motion.div key="image" initial="initial" animate="animate" variants={variants}>
-            <Image layout="fill" objectFit="cover" src={imageSrc} alt="wedding" />
-          </motion.div>
-        </Overlay>
+        <motion.div key="image" initial="initial" animate="animate" variants={variants}>
+          <Image layout="fill" objectFit="cover" src={imageSrc} alt="wedding" />
+        </motion.div>
       ) : (
         <>
           <video
