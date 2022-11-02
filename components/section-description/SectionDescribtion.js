@@ -5,10 +5,7 @@ import styles from "./section-description.module.css";
 export default function SectionDescribtion({ title }) {
   return (
     <section className={`${styles.container} container`}>
-      <article
-        style={{
-          paddingLeft: "20vw",
-        }}>
+      <article className={styles.article}>
         <span className={styles.featuring}>FEATURING</span>
         <br />
         <br />
@@ -25,7 +22,10 @@ export default function SectionDescribtion({ title }) {
         </p>
         <br />
         <Link href="/portfolio">
-         <a> <Button line={true}>PORTFOLIO</Button></a>
+          <a>
+            {" "}
+            <Button line={true}>PORTFOLIO</Button>
+          </a>
         </Link>
       </article>
     </section>

@@ -2,6 +2,16 @@
   margin: 8rem auto;
 }
 
+.article {
+  padding-left: 20vw;
+}
+
+@media (max-width: 800px) {
+  .article {
+    padding-left: 10vw;
+  }
+}
+
 .featuring {
   position: relative;
 }
