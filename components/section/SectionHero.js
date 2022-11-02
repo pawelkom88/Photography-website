@@ -31,6 +31,7 @@ export default function SectionHero({ videoSrc, imageSrc, section }) {
             muted={true}
             preload="auto"
             autoPlay="autoplay"
+            // poster="/assets/images/video-bg.webp"
             type="video/mp4">
             <source src={videoSrc} />
           </video>
