@@ -1,14 +1,10 @@
-// fonts
-import "@fontsource/questrial";
-import "@fontsource/marcellus-sc";
-
 import Link from "next/link";
-import SectionHero from "../components/section/SectionHero";
-import SectionDescribtion from "../components/section-description/SectionDescribtion";
-import Logo from "../components/logo/Logo";
-import Header from "../layout/header/Header";
-import Button from "../components/button/Button";
-import Hamburger from "../components/hamburger/Hamburger";
+import SectionHero from "components/section/SectionHero";
+import SectionDescribtion from "components/section-description/SectionDescribtion";
+import Logo from "components/logo/Logo";
+import Header from "layout/header/Header";
+import Button from "components/button/Button";
+import Hamburger from "components/hamburger/Hamburger";
 
 // helpers
 import { urls } from "../helpers/helpers";

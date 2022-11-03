@@ -39,14 +39,14 @@ export const urls = [
   },
   {
     id: 4,
-    link: "url(/assets/images/t1.webp)",
+    link: "url(/assets/images/pp1.webp)",
     linkName: "Themed",
     video: "/assets/videos/themed_video.mp4",
     poster: "/assets/videos/",
   },
   {
     id: 5,
-    link: "url(/assets/images/pp1.webp)",
+    link: "url(/assets/images/t1.webp)",
     linkName: "Properties and Interiors",
     poster: "/assets/videos/",
   },
