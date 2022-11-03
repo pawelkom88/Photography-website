@@ -3,21 +3,21 @@ import { useState, useEffect } from "react";
 
 // components
 import Link from "next/link";
-import Header from "../layout/header/Header";
-import Footer from "../layout/footer/Footer";
-import Main from "../components/main/Main";
-import Overlay from "../layout/overlay/Overlay";
-import BackgroundImage from "../components/bg-image/BackgroundImage";
-import Loader from "../components/loader/Loader";
-import Button from "../components/button/Button";
-import Logo from "../components/logo/Logo";
-import Hamburger from "../components/hamburger/Hamburger";
-import ContactIcon from "../components/contact-icon/ContactIcon";
+import Header from "layout/header/Header";
+import Footer from "layout/footer/Footer";
+import Main from "components/main/Main";
+import Overlay from "layout/overlay/Overlay";
+import BackgroundImage from "components/bg-image/BackgroundImage";
+import Loader from "components/loader/Loader";
+import Button from "components/button/Button";
+import Logo from "components/logo/Logo";
+import Hamburger from "components/hamburger/Hamburger";
+import ContactIcon from "components/contact-icon/ContactIcon";
 
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
-import { container, item } from "../helpers/helpers";
-import { parseCookies } from "../lib/parseCookies";
+import { container, item } from "helpers/helpers";
+import { parseCookies } from "lib/parseCookies";
 import Cookies from "js-cookie";
 
 export default function Home({ initialValue = true, mediaQueries }) {
@@ -48,14 +48,19 @@ export default function Home({ initialValue = true, mediaQueries }) {
           <Loader onLoading={setLoading} />
         </motion.div>
       ) : (
-        <motion.div variants={container} initial="hidden" animate="show" className="container">
+        <motion.div
+          key="content"
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="container">
           <Header variants={item} className={hoverColor}>
             <Logo variants={item} />
             <div>
               {!mediaQueries ? (
-                <Link href="/portfolio" className={hoverColor}>
+                <Link href="/about" className={hoverColor}>
                   <a>
-                    <Button>PORTFOLIO</Button>
+                    <Button className={hoverColor}>ABOUT</Button>
                   </a>
                 </Link>
               ) : (
@@ -76,11 +81,14 @@ export default function Home({ initialValue = true, mediaQueries }) {
             </p>
             {!mediaQueries && <ContactIcon onHover={isHovering} />}
           </Footer>
+          {/* replace */}
+          <div className="xxx">lorem</div>
           <Overlay>
             {!mediaQueries && <BackgroundImage position={position} onHover={isHovering} />}
           </Overlay>
         </motion.div>
       )}
+      <div className="cursor"></div>
     </AnimatePresence>
   );
 }

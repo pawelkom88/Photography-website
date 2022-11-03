@@ -2,10 +2,10 @@
 import "@fontsource/questrial";
 import "@fontsource/marcellus-sc";
 
-import useMatchMedia from "../hooks/useMatchMedia";
+import useMatchMedia from "hooks/useMatchMedia";
 import { motion } from "framer-motion";
-import { screenSize } from "../helpers/helpers";
-import "../styles/globals.css";
+import { screenSize } from "helpers/helpers";
+import "styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
   const { matches } = useMatchMedia(screenSize);
