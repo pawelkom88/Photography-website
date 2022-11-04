@@ -23,7 +23,6 @@ export default function SectionDescribtion({ title }) {
         <br />
         <Link href="/portfolio">
           <a>
-            {" "}
             <Button line={true}>PORTFOLIO</Button>
           </a>
         </Link>
