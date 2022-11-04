@@ -35,7 +35,6 @@ export default function SectionHero({ videoSrc, imageSrc, section }) {
             type="video/mp4">
             <source src={videoSrc} />
           </video>
-          <p>Scroll down</p>
         </>
       )}
       <h2 className={styles["section-heading"]}>{section}</h2>
