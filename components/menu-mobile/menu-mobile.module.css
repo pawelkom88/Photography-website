@@ -1,0 +1,36 @@
+.mobile-menu {
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("/assets/images/bg.png");
+  background-repeat: repeat;
+  background-color: #000;
+}
+
+.menu-links {
+  color: var(--secondary-clr);
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: -0.02rem;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.menu-links * {
+  margin: 0.2rem 0;
+}
+
+.menu-link-wrapper {
+  overflow: hidden;
+}
