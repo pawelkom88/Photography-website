@@ -1,18 +1,19 @@
+import { useState } from "react";
+import MenuMobile from "components/menu-mobile/menuMobile";
+
 import styles from "./hamburger.module.css";
 
 export default function Hamburger() {
-  const showMenu = false;
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      //   onClick={handleMenu}
-      role="button"
-      className={styles.hamburger}
-      tabIndex="0"
-      aria-expanded="false"
-      aria-label="show navigation menu">
-      <span className={`${showMenu && styles["open"]} ${styles.line}`}></span>
-      <span className={`${showMenu && styles["open"]} ${styles.line}`}></span>
-    </div>
+    <>
+      <button
+        className={`${isOpen ? styles.on : ""} ${styles.dots}`}
+        onClick={() => setIsOpen(!isOpen)}>
+        <span className={styles.dot}></span>
+      </button>
+      <MenuMobile isOpen={isOpen} />
+    </>
   );
 }
