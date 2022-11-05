@@ -20,7 +20,7 @@ import { container, item } from "helpers/helpers";
 import { parseCookies } from "lib/parseCookies";
 import Cookies from "js-cookie";
 
-export default function Home({ initialValue = true, mediaQueries }) {
+export default function Home({ initialValue = true, mediaQueries, isOpen, setIsOpen }) {
   const [isHovering, setIsHovering] = useState(false);
   const [position, setPosition] = useState(null);
   const [loading, setLoading] = useState(() => JSON.parse(initialValue));
@@ -64,7 +64,7 @@ export default function Home({ initialValue = true, mediaQueries }) {
                   </a>
                 </Link>
               ) : (
-                <Hamburger />
+                <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
               )}
             </div>
           </Header>
@@ -81,14 +81,11 @@ export default function Home({ initialValue = true, mediaQueries }) {
             </p>
             {!mediaQueries && <ContactIcon onHover={isHovering} />}
           </Footer>
-          {/* replace */}
-          <div className="xxx">lorem</div>
           <Overlay>
             {!mediaQueries && <BackgroundImage position={position} onHover={isHovering} />}
           </Overlay>
         </motion.div>
       )}
-      <div className="cursor"></div>
     </AnimatePresence>
   );
 }
