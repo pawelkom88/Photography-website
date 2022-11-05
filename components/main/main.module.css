@@ -1,5 +1,5 @@
 .main {
-  height: 60vh;
+  min-height: 60vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -13,7 +13,14 @@
   font-weight: 100;
   letter-spacing: 10px;
   opacity: 0.6;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 800px) {
+  .explore {
+    margin-top: 5rem;
+  }
 }
 
 .explore::before {
@@ -29,7 +36,7 @@
   width: 100%;
   font-family: var(--secondary-font);
   font-weight: 200;
-  font-size: clamp(1.8rem, 0.6rem + 2.2vw, 3rem);
+  font-size: clamp(1.8rem, 0.6rem + 2vw, 2.8rem);
   color: var(--primary-clr);
 }
 
