@@ -35,6 +35,8 @@ export const urls = [
     id: 3,
     link: "url(/assets/images/e1.webp)",
     linkName: "Events and Festivals",
+    video: "/assets/videos/events_video.mp4",
+
     poster: "/assets/videos/",
   },
   {
@@ -48,6 +50,8 @@ export const urls = [
     id: 5,
     link: "url(/assets/images/t1.webp)",
     linkName: "Properties and Interiors",
+    video: "/assets/videos/property_video.mp4",
+
     poster: "/assets/videos/",
   },
 ];
