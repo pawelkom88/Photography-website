@@ -3,7 +3,7 @@
   --secondary-clr: #fff;
   --teriary-clr: #000;
   --primary-font: "Questrial", san-serif;
-  --secondary-font: "Marcellus SC", sans-serif;
+  --secondary-font: "Bodoni Moda", sans-serif;
 }
 
 *,
@@ -26,7 +26,7 @@ ul li {
 body {
   font-family: var(--primary-font);
   text-rendering: optimizeSpeed;
-  /* overflow: visible !important; */
+  overflow-x: hidden;
 }
 
 img,
@@ -111,4 +111,8 @@ select {
   background-size: cover;
   background-position: center 15%;
   opacity: 0;
+}
+
+.hidden {
+  overflow: hidden;
 }
