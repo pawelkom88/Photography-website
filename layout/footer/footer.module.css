@@ -1,12 +1,22 @@
 .footer {
-  height: 15vh;
+  height: 13vh;
   position: relative;
 
   font-family: var(--primary-font);
   font-size: 0.8rem;
   line-height: 1.8;
 
-  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+
+  margin-top: 3rem;
   margin-left: 1rem;
   letter-spacing: 1px;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    margin-top: 5rem;
+    align-items: flex-end;
+  }
 }
