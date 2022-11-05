@@ -1,26 +1,23 @@
 // fonts
 import "@fontsource/questrial";
 import "@fontsource/marcellus-sc";
+import "@fontsource/bodoni-moda";
 
+// hooks
+import { useState } from "react";
 import useMatchMedia from "hooks/useMatchMedia";
 import { motion } from "framer-motion";
+
+// helpers
 import { screenSize } from "helpers/helpers";
+import { pageTransitionVariants } from "helpers/animation";
+
+// styles
 import "styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
+  const [isOpen, setIsOpen] = useState(false);
   const { matches } = useMatchMedia(screenSize);
-
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: { duration: 1 },
-    },
-    exit: { opacity: 0 },
-    transition: { ease: "easeInOut", duration: 1 },
-  };
 
   return (
     <>
@@ -29,8 +26,8 @@ function MyApp({ Component, pageProps, router }) {
         initial="initial"
         animate="animate"
         exit="exit"
-        variants={variants}>
-        <Component mediaQueries={matches} {...pageProps} />
+        variants={pageTransitionVariants}>
+        <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
       </motion.div>
     </>
   );

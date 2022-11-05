@@ -33,7 +33,7 @@ export default function Portfolio({ mediaQueries }) {
           )}
         </div>
       </Header>
-      <main>
+      <main style={{ marginTop: "2rem" }}>
         <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
           <Masonry gutter="20px">
             {gridImages.map(image => {
