@@ -6,7 +6,7 @@ export default function Logo({ variants }) {
   return (
     <motion.h1 variants={variants} className={styles.logo}>
       <Link href="/">
-        <a>JOHN DOE</a>
+        <a>JOHN DOE<br/>PHOTOGRAPHY</a>
       </Link>
     </motion.h1>
   );

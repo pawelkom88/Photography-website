@@ -1,60 +1,45 @@
-.dots {
-  width: 40px;
-  height: 20px;
-  border: none;
-  background: transparent;
+.hamburger {
   position: relative;
+  width: 4rem;
+  height: 4rem;
+  display: block;
+  flex-shrink: 0;
+  border-style: none;
+  background-color: transparent;
   cursor: pointer;
-  z-index: 11;
+  z-index: 21;
 }
 
-.dots::after,
-.dots::before,
-.dots .dot {
-  width: 10%;
-  height: 20%;
-  border-radius: 100px;
-  position: absolute;
-  left: 0px;
-  background: var(--primary-clr);
-  transform: rotate(0deg);
-  transition: all 0.4s;
-  left: 1%;
-  right: 1%;
-  margin: 0 auto;
-}
-
-.dots::after,
-.dots::before {
+.hamburger::after,
+.hamburger::before {
   content: "";
-}
-
-.dots::after {
-  top: -5%;
-  margin-top: 0px;
-}
-
-.dots::before {
-  bottom: -5%;
-  margin-bottom: 0px;
-}
-
-.dots .dot {
+  position: absolute;
   top: 50%;
-  margin-top: -2px;
+  left: 50%;
+  display: block;
+  width: 54%;
+  height: 2px;
+  background: var(--primary-clr);
+  transition: transform 0.3s ease-in-out, background-color 0.8s 0.5s ease-in-out;
+  z-index: 20;
 }
 
-.on::after {
-  transform: rotate(135deg) translate(5px, -5px);
-  width: 80%;
+.hamburger::after {
+  transform: translate(-50%) translateY(4px) scaleX(0.6);
 }
 
-.on::before {
-  transform: rotate(225deg);
-  bottom: 50%;
-  width: 80%;
+.hamburger::before {
+  transform: translate(-50%) translateY(-4px);
 }
 
-.on .dot {
-  opacity: 0;
+.hamburger.active::after {
+  transform: translate(-50%) rotate(-40deg) scaleX(0.8);
+  background: var(--secondary-clr);
+  z-index: 20;
+}
+
+.hamburger.active::before {
+  transform: translate(-50%) rotate(40deg) scaleX(0.8);
+  background: var(--secondary-clr);
+  z-index: 20;
 }
