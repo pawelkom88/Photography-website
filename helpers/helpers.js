@@ -36,7 +36,6 @@ export const urls = [
     link: "url(/assets/images/e1.webp)",
     linkName: "Events and Festivals",
     video: "/assets/videos/events_video.mp4",
-
     poster: "/assets/videos/",
   },
   {
@@ -82,3 +81,5 @@ for (let i = 1; i <= 80; i++) {
 }
 
 export { gridImages };
+
+// helpers

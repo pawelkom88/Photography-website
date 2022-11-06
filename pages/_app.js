@@ -12,6 +12,8 @@ import { motion } from "framer-motion";
 // helpers
 import { screenSize } from "helpers/helpers";
 import { pageTransitionVariants } from "helpers/animation";
+import { DefaultSeo } from "next-seo";
+import SEO from "../seo.config";
 
 // styles
 import "styles/globals.css";
@@ -25,7 +27,7 @@ function MyApp({ Component, pageProps, router }) {
   const { matches } = useMatchMedia(screenSize);
 
   return (
-    <>
+    // <>
       <motion.div
         key={router.route}
         initial="initial"
@@ -40,9 +42,10 @@ function MyApp({ Component, pageProps, router }) {
           innerScale={1.7}
           outerScale={5}
         />
+        <DefaultSeo {...SEO} />
         <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
       </motion.div>
-    </>
+    // </>
   );
 }
 
