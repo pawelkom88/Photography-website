@@ -16,7 +16,7 @@ import ContactIcon from "@components/contact-icon/ContactIcon";
 
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
-import { container, item } from "@helpers/helpers";
+import { container, item } from "@helpers/animation";
 import { parseCookies } from "lib/parseCookies";
 import Cookies from "js-cookie";
 

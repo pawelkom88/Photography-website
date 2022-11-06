@@ -1,3 +1,32 @@
+// MAIN PAGE ANIMATION
+
+export const container = {
+  show: {
+    transition: { staggerChildren: 0.5, delay: 0.1 },
+  },
+};
+
+export const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: {
+      ease: "linear",
+      duration: 0.8,
+    },
+  },
+};
+
+// MOBILE MENU
 const easing = [0.6, -0.05, 0.01, 0.99];
 
 export const links = [
