@@ -89,7 +89,9 @@ export default function Home({ initialValue = true, mediaQueries, isOpen, setIsO
               Discover the collections of modern, captivating <br />
               and uniquely beautiful photographs.
             </p>
-            {!mediaQueries && <ContactIcon onHover={isHovering} />}
+            {!mediaQueries && (
+              <ContactIcon styles={{ bottom: "2.8rem", right: 0 }} onHover={isHovering} />
+            )}
           </Footer>
           <Overlay>
             {!mediaQueries && <BackgroundImage position={position} onHover={isHovering} />}
