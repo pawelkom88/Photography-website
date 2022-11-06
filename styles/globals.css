@@ -4,6 +4,7 @@
   --teriary-clr: #000;
   --primary-font: "Questrial", san-serif;
   --secondary-font: "Bodoni Moda", sans-serif;
+  --tablet-breakpoint: 800px;
 }
 
 *,

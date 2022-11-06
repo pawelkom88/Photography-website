@@ -14,9 +14,9 @@
   letter-spacing: 1px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: var(--tablet-breakpoint)) {
   .footer {
-    margin-top: 5rem;
+    margin-top: 4rem;
     align-items: flex-end;
   }
 }

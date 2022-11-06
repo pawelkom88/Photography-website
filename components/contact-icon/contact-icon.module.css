@@ -1,16 +1,13 @@
-.icon {
+.icons {
   position: absolute;
-  bottom: 2.8rem;
-  right: 0;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   cursor: pointer;
 }
 
-.icon * {
+.icons * {
   margin: 0 0.7rem;
 }
-
