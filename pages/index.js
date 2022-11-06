@@ -13,7 +13,7 @@ import Button from "@components/button/Button";
 import Logo from "@components/logo/Logo";
 import Hamburger from "@components/hamburger/Hamburger";
 import ContactIcon from "@components/contact-icon/ContactIcon";
-import PageSEO from "@components/seo/pageSEO";
+import PageSeo from "@components/seo/pageSEO";
 
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
@@ -73,7 +73,7 @@ export default function Home({ initialValue = true, mediaQueries, isOpen, setIsO
           initial="hidden"
           animate="show"
           className="container">
-          <PageSEO seo={mainPageSeo} />
+          <PageSeo seo={mainPageSeo} />
           <Header variants={item} className={hoverColor}>
             <Logo variants={item} />
             {navBtn}
