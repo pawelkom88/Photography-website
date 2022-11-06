@@ -13,10 +13,12 @@ import Button from "@components/button/Button";
 import Logo from "@components/logo/Logo";
 import Hamburger from "@components/hamburger/Hamburger";
 import ContactIcon from "@components/contact-icon/ContactIcon";
+import PageSEO from "@components/seo/pageSEO";
 
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
 import { container, item } from "@helpers/animation";
+import { mainPageSeo } from "@helpers/seo";
 import { parseCookies } from "lib/parseCookies";
 import Cookies from "js-cookie";
 
@@ -25,11 +27,28 @@ export default function Home({ initialValue = true, mediaQueries, isOpen, setIsO
   const [position, setPosition] = useState(null);
   const [loading, setLoading] = useState(() => JSON.parse(initialValue));
 
+  // add white color on hover, only on big screens
   const hoverColor = isHovering && !mediaQueries ? "white" : "grey";
 
+  // Add cookies based on loading value
   useEffect(() => {
     Cookies.set("loader", JSON.stringify(loading), { expires: 7 });
   }, [loading]);
+
+  // render nav button depends pn screen size
+  let navBtn;
+
+  if (mediaQueries) {
+    navBtn = <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />;
+  } else {
+    navBtn = (
+      <Button className={hoverColor}>
+        <Link href="/about" className={hoverColor}>
+          <a>ABOUT</a>
+        </Link>
+      </Button>
+    );
+  }
 
   function handleMouseOver(id) {
     setIsHovering(true);
@@ -54,19 +73,10 @@ export default function Home({ initialValue = true, mediaQueries, isOpen, setIsO
           initial="hidden"
           animate="show"
           className="container">
+          <PageSEO seo={mainPageSeo} />
           <Header variants={item} className={hoverColor}>
             <Logo variants={item} />
-            <div>
-              {!mediaQueries ? (
-                <Link href="/about" className={hoverColor}>
-                  <a>
-                    <Button className={hoverColor}>ABOUT</Button>
-                  </a>
-                </Link>
-              ) : (
-                <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
-              )}
-            </div>
+            {navBtn}
           </Header>
           <Main
             variants={item}
