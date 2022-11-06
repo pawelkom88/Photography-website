@@ -70,7 +70,7 @@ export const variants = {
 
 export const itemVariants = {
   closed: {
-    y: "-100%",
+    y: "100%",
   },
   open: { y: 0 },
 };
