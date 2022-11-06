@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import ContactIcon from "@components/contact-icon/ContactIcon";
 import Link from "next/link";
-import { links, variants, itemVariants, sideVariants } from "helpers/animation";
+import { motion, AnimatePresence } from "framer-motion";
+import { links, variants, itemVariants, sideVariants } from "@helpers/animation";
 import styles from "./menu-mobile.module.css";
 
 export default function MenuMobile({ isOpen }) {
@@ -42,7 +43,10 @@ export default function MenuMobile({ isOpen }) {
               </div>
             ))}
           </motion.ul>
-          <p style={{ color: "white" }}>asdas</p>
+          <ContactIcon
+            flexDirection="column"
+            styles={{ bottom: "5vh", left: "1vh", minHeight: "12vh" }}
+          />
         </motion.div>
       )}
     </AnimatePresence>
