@@ -4,6 +4,8 @@ import styles from "@styles/section.module.css";
 import { motion } from "framer-motion";
 
 export default function SectionHero({ videoSrc, imageSrc, section }) {
+  console.log(imageSrc);
+
   const [isPlaying, setIsPlaying] = useState(true);
 
   const variants = {
@@ -21,7 +23,15 @@ export default function SectionHero({ videoSrc, imageSrc, section }) {
     <section className={styles.section}>
       {!isPlaying ? (
         <motion.div key="image" initial="initial" animate="animate" variants={variants}>
-          <Image layout="fill" objectFit="cover" src={imageSrc} alt="wedding" />
+          <Image
+            layout="fill"
+            objectFit="cover"
+            src={imageSrc}
+            alt="wedding"
+            priority
+            placeholder="blur"
+            blurDataURL={imageSrc}
+          />
         </motion.div>
       ) : (
         <>
