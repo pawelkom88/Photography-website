@@ -3,20 +3,20 @@ import { useState, useEffect } from "react";
 
 // components
 import Link from "next/link";
-import Header from "layout/header/Header";
-import Footer from "layout/footer/Footer";
-import Main from "components/main/Main";
-import Overlay from "layout/overlay/Overlay";
-import BackgroundImage from "components/bg-image/BackgroundImage";
-import Loader from "components/loader/Loader";
-import Button from "components/button/Button";
-import Logo from "components/logo/Logo";
-import Hamburger from "components/hamburger/Hamburger";
-import ContactIcon from "components/contact-icon/ContactIcon";
+import Header from "@layout/header/Header";
+import Footer from "@layout/footer/Footer";
+import Main from "@components/main/Main";
+import Overlay from "@layout/overlay/Overlay";
+import BackgroundImage from "@components/bg-image/BackgroundImage";
+import Loader from "@components/loader/Loader";
+import Button from "@components/button/Button";
+import Logo from "@components/logo/Logo";
+import Hamburger from "@components/hamburger/Hamburger";
+import ContactIcon from "@components/contact-icon/ContactIcon";
 
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
-import { container, item } from "helpers/helpers";
+import { container, item } from "@helpers/helpers";
 import { parseCookies } from "lib/parseCookies";
 import Cookies from "js-cookie";
 

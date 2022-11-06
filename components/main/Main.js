@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./main.module.css";
-import { urls } from "../../helpers/helpers";
+import { urls } from "@helpers/helpers";
 
 export default function Main({ onMouseOver, onMouseOut, variants, hoverColor }) {
   return (

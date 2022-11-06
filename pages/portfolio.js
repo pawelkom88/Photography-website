@@ -2,11 +2,11 @@
 import Link from "next/link";
 
 // components
-import Header from "layout/header/Header";
-import Button from "components/button/Button";
-import Hamburger from "components/hamburger/Hamburger";
-import Logo from "components/logo/Logo";
-import GridImage from "components/grid-image/GridImage";
+import Header from "@layout/header/Header";
+import Button from "@components/button/Button";
+import Hamburger from "@components/hamburger/Hamburger";
+import Logo from "@components/logo/Logo";
+import GridImage from "@components/grid-image/GridImage";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 // helpers

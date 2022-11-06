@@ -4,8 +4,9 @@ import "@fontsource/marcellus-sc";
 import "@fontsource/bodoni-moda";
 
 // hooks
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import useMatchMedia from "hooks/useMatchMedia";
+import useMatchMedia from "@hooks/useMatchMedia";
 import { motion } from "framer-motion";
 
 // helpers
@@ -14,6 +15,10 @@ import { pageTransitionVariants } from "helpers/animation";
 
 // styles
 import "styles/globals.css";
+
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
 
 function MyApp({ Component, pageProps, router }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +32,14 @@ function MyApp({ Component, pageProps, router }) {
         animate="animate"
         exit="exit"
         variants={pageTransitionVariants}>
+        <AnimatedCursor
+          innerSize={18}
+          outerSize={18}
+          color={`${isOpen ? "255, 255, 255" : "68, 68, 68"}`}
+          outerAlpha={0.2}
+          innerScale={1.7}
+          outerScale={5}
+        />
         <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
       </motion.div>
     </>

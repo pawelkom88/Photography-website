@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
-import { urls } from "../../helpers/helpers";
-import styles from "../../layout/overlay/overlay.module.css";
+import { urls } from "@helpers/helpers";
+import styles from "@layout/overlay/overlay.module.css";
 
 export default function BackgroundImage({ onHover, position }) {
   useEffect(() => {
