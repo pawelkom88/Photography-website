@@ -6,7 +6,7 @@
   padding-left: 20vw;
 }
 
-@media (max-width: 800px) {
+@media (max-width: var(--tablet-breakpoint)) {
   .article {
     padding-left: 10vw;
   }
