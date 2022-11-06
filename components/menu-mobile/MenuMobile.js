@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ContactIcon from "components/contact-icon/ContactIcon";
 import Link from "next/link";
 import { links, variants, itemVariants, sideVariants } from "helpers/animation";
 import styles from "./menu-mobile.module.css";

@@ -1,11 +1,11 @@
-import SectionHero from "components/section/SectionHero";
-import Logo from "components/logo/Logo";
-import Header from "layout/header/Header";
-import Hamburger from "components/hamburger/Hamburger";
-import SectionDescribtion from "components/section-description/SectionDescribtion";
+import SectionHero from "@components/section/SectionHero";
+import Logo from "@components/logo/Logo";
+import Header from "@layout/header/Header";
+import Hamburger from "@components/hamburger/Hamburger";
+import SectionDescribtion from "@components/section-description/SectionDescribtion";
 
 // helpers
-import { urls } from "../helpers/helpers";
+import { urls } from "@helpers/helpers";
 
 export default function Portrait({ isOpen, setIsOpen }) {
   return (

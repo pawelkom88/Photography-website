@@ -1,4 +1,4 @@
-import MenuMobile from "components/menu-mobile/menuMobile";
+import MenuMobile from "@components/menu-mobile/MenuMobile";
 import styles from "./hamburger.module.css";
 
 export default function Hamburger({ isOpen, setIsOpen }) {

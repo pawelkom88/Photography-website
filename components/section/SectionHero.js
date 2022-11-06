@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import styles from "../../styles/section.module.css";
+import styles from "@styles/section.module.css";
 import { motion } from "framer-motion";
 
 export default function SectionHero({ videoSrc, imageSrc, section }) {
