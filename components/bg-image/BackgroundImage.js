@@ -28,18 +28,12 @@ export default function BackgroundImage({ onHover, position }) {
               layout="fill"
               objectFit="cover"
               alt={`${linkName} photo`}
+              loading="eager"
+              quality={30}
             />
           </div>
         );
       })}
     </>
-    // <>
-    //   <div className={`bg-image ${styles["bg-image1"]} overlay`}></div>
-    //   <div className={`bg-image ${styles["bg-image2"]} overlay`}></div>
-    //   <div className={`bg-image ${styles["bg-image3"]} overlay`}></div>
-    //   <div className={`bg-image ${styles["bg-image4"]} overlay`}></div>
-    //   <div className={`bg-image ${styles["bg-image5"]} overlay`}></div>
-    //   <div className={`bg-image ${styles["bg-image6"]} overlay`}></div>
-    // </>
   );
 }

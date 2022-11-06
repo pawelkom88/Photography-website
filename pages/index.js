@@ -13,7 +13,7 @@ import Button from "@components/button/Button";
 import Logo from "@components/logo/Logo";
 import Hamburger from "@components/hamburger/Hamburger";
 import ContactIcon from "@components/contact-icon/ContactIcon";
-import PageSeo from "@components/seo/pageSEO";
+import PageSeo from "@components/seo/pageSeo";
 
 // helpers
 import { AnimatePresence, motion } from "framer-motion";
