@@ -11,9 +11,7 @@ export default function SectionImages({ src, alt }) {
           <Image src={src} alt={alt} />
         </div>
         <div className={styles.description}>
-          <p className={styles.content}>
-            dummy text - will be dynamic
-          </p>
+          <p className={styles.content}>dummy text - will be dynamic</p>
         </div>
       </div>
       <article className={styles.right}>
