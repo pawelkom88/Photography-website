@@ -1,7 +1,6 @@
-import Head from "next/head";
 import { NextSeo } from "next-seo";
 
-export default function PageSeo(props) {
+export default function PageSeo({ seo }) {
   const {
     pageTitle,
     pageDescription,
@@ -10,26 +9,21 @@ export default function PageSeo(props) {
     OpenGraphTitle,
     OpenGraphDescription,
     openGraphImageUrl,
-  } = props;
+  } = seo;
+
+  console.log(OpenGraphTitle);
 
   return (
-    <Head>
-      <NextSeo
-        title={pageTitle}
-        description={pageDescription}
-        canonical={canonical}
-        openGraph={{
-          url: { url },
-          title: { OpenGraphTitle },
-          description: { OpenGraphDescription },
-          images: { url: { openGraphImageUrl } },
-        }}
-        twitter={{
-          handle: "@handle",
-          site: "@site",
-          cardType: "summary_large_image",
-        }}
-      />
-    </Head>
+    <NextSeo
+      title={pageTitle}
+      description={pageDescription}
+      canonical={canonical}
+      openGraph={{
+        url,
+        title: OpenGraphTitle,
+        description: OpenGraphDescription,
+        images: { url: openGraphImageUrl },
+      }}
+    />
   );
 }

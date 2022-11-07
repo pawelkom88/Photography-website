@@ -5,8 +5,8 @@ export const SEO = {
     siteName: "Photography website",
   },
   twitter: {
-    handle: "@handle", // twitter:creator
-    site: "@site", // twitter:site
-    cardType: "summary_large_image", // twitter:card
+    handle: "@aaa", // twitter:creator
+    site: "@bbb", // twitter:site
+    cardType: "@ccc", // twitter:card
   },
 };

@@ -61,44 +61,46 @@ export default function Home({ initialValue = true, mediaQueries, isOpen, setIsO
   }
 
   return (
-    <AnimatePresence>
-      {loading ? (
-        <motion.div key="loader">
-          <Loader onLoading={setLoading} />
-        </motion.div>
-      ) : (
-        <motion.div
-          key="content"
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="container">
-          <PageSeo seo={mainPageSeo} />
-          <Header variants={item} className={hoverColor}>
-            <Logo variants={item} />
-            {navBtn}
-          </Header>
-          <Main
-            variants={item}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-            hoverColor={hoverColor}
-          />
-          <Footer variants={item}>
-            <p className={hoverColor}>
-              Discover the collections of modern, captivating <br />
-              and uniquely beautiful photographs.
-            </p>
-            {!mediaQueries && (
-              <ContactIcon styles={{ bottom: "2.8rem", right: 0 }} onHover={isHovering} />
-            )}
-          </Footer>
-          <Overlay>
-            {!mediaQueries && <BackgroundImage position={position} onHover={isHovering} />}
-          </Overlay>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <>
+      <PageSeo seo={mainPageSeo} />
+      <AnimatePresence>
+        {loading ? (
+          <motion.div key="loader">
+            <Loader onLoading={setLoading} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="content"
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="container">
+            <Header variants={item} className={hoverColor}>
+              <Logo variants={item} />
+              {navBtn}
+            </Header>
+            <Main
+              variants={item}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+              hoverColor={hoverColor}
+            />
+            <Footer variants={item}>
+              <p className={hoverColor}>
+                Discover the collections of modern, captivating <br />
+                and uniquely beautiful photographs.
+              </p>
+              {!mediaQueries && (
+                <ContactIcon styles={{ bottom: "2.8rem", right: 0 }} onHover={isHovering} />
+              )}
+            </Footer>
+            <Overlay>
+              {!mediaQueries && <BackgroundImage position={position} onHover={isHovering} />}
+            </Overlay>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
