@@ -10,9 +10,26 @@ import GridImage from "@components/grid-image/GridImage";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 // helpers
-import { gridImages, screenSizes } from "helpers/helpers";
+import { screenSizes } from "helpers/helpers";
 
-export default function Portfolio({ mediaQueries }) {
+export const getServerSideProps = async () => {
+  const res = await fetch("https://api.pexels.com/v1/search?query=nature", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: process.env.API_KEY,
+    },
+  });
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+export default function Portfolio({ mediaQueries, data: { photos } }) {
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };
   });
@@ -33,10 +50,15 @@ export default function Portfolio({ mediaQueries }) {
           )}
         </div>
       </Header>
+
+      {/* componetn */}
+      <input type="text" />
+      {/* componetn */}
+
       <main style={{ marginTop: "2rem" }}>
         <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
           <Masonry gutter="20px">
-            {gridImages.map(image => {
+            {photos.map(image => {
               return <GridImage key={image.id} image={image} />;
             })}
           </Masonry>

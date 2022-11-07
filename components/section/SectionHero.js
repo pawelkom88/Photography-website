@@ -4,7 +4,6 @@ import styles from "@styles/section.module.css";
 import { motion } from "framer-motion";
 
 export default function SectionHero({ videoSrc, imageSrc, section }) {
-  console.log(imageSrc);
 
   const [isPlaying, setIsPlaying] = useState(true);
 

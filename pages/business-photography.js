@@ -8,7 +8,6 @@ import Hamburger from "@components/hamburger/Hamburger";
 import { urls } from "@helpers/helpers";
 
 export default function Business({ isOpen, setIsOpen }) {
-  console.log(isOpen);
   return (
     <>
       <div className="container">

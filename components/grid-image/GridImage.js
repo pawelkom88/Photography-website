@@ -1,9 +1,17 @@
 import Image from "next/image";
 
-export default function GridImage({ image: { image, title } }) {
+export default function GridImage({ image }) {
+  const { src, alt, width, height } = image;
+  console.log(width);
   return (
-    <div>
-      <Image width={400} height={300} src={image.slice(4, -1)} alt={title} />
-    </div>
+    <Image
+      width={width}
+      height={height}
+      src={src.medium}
+      alt={alt}
+      placeholder="blur"
+      blurDataURL={src.tiny}
+      quality={50}
+    />
   );
 }
