@@ -11,8 +11,6 @@ export default function PageSeo({ seo }) {
     openGraphImageUrl,
   } = seo;
 
-  console.log(OpenGraphTitle);
-
   return (
     <NextSeo
       title={pageTitle}
