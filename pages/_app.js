@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { screenSize } from "helpers/helpers";
 import { pageTransitionVariants } from "helpers/animation";
 import { DefaultSeo } from "next-seo";
-import SEO from "../seo.config";
+import { SEO } from "../seo.config";
 
 // styles
 import "styles/globals.css";
@@ -26,26 +26,25 @@ function MyApp({ Component, pageProps, router }) {
   const [isOpen, setIsOpen] = useState(false);
   const { matches } = useMatchMedia(screenSize);
 
+  const { openGraph, twitter } = SEO;
   return (
-    // <>
-      <motion.div
-        key={router.route}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={pageTransitionVariants}>
-        <AnimatedCursor
-          innerSize={18}
-          outerSize={18}
-          color={`${isOpen ? "255, 255, 255" : "68, 68, 68"}`}
-          outerAlpha={0.2}
-          innerScale={1.7}
-          outerScale={5}
-        />
-        <DefaultSeo {...SEO} />
-        <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
-      </motion.div>
-    // </>
+    <motion.div
+      key={router.route}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageTransitionVariants}>
+      <AnimatedCursor
+        innerSize={18}
+        outerSize={18}
+        color={`${isOpen ? "255, 255, 255" : "68, 68, 68"}`}
+        outerAlpha={0.2}
+        innerScale={1.7}
+        outerScale={5}
+      />
+      <DefaultSeo openGraph={openGraph} twitter={twitter} />
+      <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
+    </motion.div>
   );
 }
 
