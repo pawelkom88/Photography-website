@@ -29,7 +29,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function Portfolio({ mediaQueries, data: { photos } }) {
+export default function Portfolio({ mediaQueries, data: { photos }, isOpen, setIsOpen }) {
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };
   });
@@ -46,7 +46,7 @@ export default function Portfolio({ mediaQueries, data: { photos } }) {
               </a>
             </Link>
           ) : (
-            <Hamburger />
+            <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
           )}
         </div>
       </Header>

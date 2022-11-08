@@ -19,7 +19,7 @@ export default function Portrait({ isOpen, setIsOpen }) {
       {urls.map(({ id, linkName, link, video }) => {
         if (linkName === "Portraits") {
           return (
-            <>
+            <div key={id}>
               <SectionHero
                 key={id}
                 section={linkName}
@@ -27,7 +27,7 @@ export default function Portrait({ isOpen, setIsOpen }) {
                 videoSrc={video}
               />
               <SectionDescribtion title={urls.linkName} />
-            </>
+            </div>
           );
         }
       })}

@@ -19,7 +19,7 @@ export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
       {urls.map(({ id, linkName, link, video }) => {
         if (linkName === "Properties and Interiors") {
           return (
-            <>
+            <div key={id}>
               <SectionHero
                 key={id}
                 section={linkName}
@@ -27,7 +27,7 @@ export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
                 videoSrc={video}
               />
               <SectionDescribtion title={linkName} />
-            </>
+            </div>
           );
         }
       })}
