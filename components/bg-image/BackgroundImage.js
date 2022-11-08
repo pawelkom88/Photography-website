@@ -29,7 +29,7 @@ export default function BackgroundImage({ onHover, position }) {
               objectFit="cover"
               alt={`${linkName} photo`}
               loading="eager"
-              quality={30}
+              quality={50}
             />
           </div>
         );

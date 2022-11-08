@@ -19,16 +19,18 @@ export default function Portrait({ isOpen, setIsOpen }) {
       {urls.map(({ id, linkName, link, video }) => {
         if (linkName === "Portraits") {
           return (
-            <SectionHero
-              key={id}
-              section={linkName}
-              imageSrc={link.slice(4, -1)}
-              videoSrc={video}
-            />
+            <>
+              <SectionHero
+                key={id}
+                section={linkName}
+                imageSrc={link.slice(4, -1)}
+                videoSrc={video}
+              />
+              <SectionDescribtion title={urls.linkName} />
+            </>
           );
         }
       })}
-      <SectionDescribtion title={urls[1].linkName} />
     </>
   );
 }
