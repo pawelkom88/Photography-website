@@ -17,18 +17,20 @@ export default function Business({ isOpen, setIsOpen }) {
         </Header>
       </div>
       {urls.map(({ id, linkName, link, video }) => {
-        if (linkName === "Properties and Interiors") {
+        if (linkName === "Business Photography") {
           return (
-            <SectionHero
-              key={id}
-              section={linkName}
-              imageSrc={link.slice(4, -1)}
-              videoSrc={video}
-            />
+            <>
+              <SectionHero
+                key={id}
+                section={linkName}
+                imageSrc={link.slice(4, -1)}
+                videoSrc={video}
+              />
+              <SectionDescribtion title={linkName} />
+            </>
           );
         }
       })}
-      <SectionDescribtion title={urls[2].linkName} />
     </>
   );
 }
