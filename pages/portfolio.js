@@ -17,6 +17,13 @@ import { screenSizes } from "helpers/helpers";
 export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
   const [category, setCategory] = useState("");
   const [userInput, setUserInput] = useState("");
+  // comment
+  const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
+    return { [res]: columnNum };
+  });
+  // const { data, loading } = useFetch(
+  //   `https://api.pexels.com/v1/search?query=${category || "people"}`
+  // );
 
   function handleCategory() {
     setUserInput(e.target.value);
@@ -28,15 +35,6 @@ export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
     setUserInput("");
   }
 
-  const { data, loading } = useFetch(
-    `https://api.pexels.com/v1/search?query=${category || "people"}`
-  );
-
-  console.log(data);
-
-  const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
-    return { [res]: columnNum };
-  });
   return (
     <div className="container">
       <Header>
@@ -62,6 +60,7 @@ export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
       {/* componetn */}
 
       <main style={{ marginTop: "2rem" }}>
+        {/* <div>{loading && "Loading..."}</div>
         <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
           <Masonry gutter="20px">
             {data &&
@@ -69,7 +68,7 @@ export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
                 return <GridImage key={image.id} image={image} />;
               })}
           </Masonry>
-        </ResponsiveMasonry>
+        </ResponsiveMasonry> */}
       </main>
     </div>
   );
