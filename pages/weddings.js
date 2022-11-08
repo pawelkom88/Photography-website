@@ -1,5 +1,6 @@
 import SectionHero from "@components/section/SectionHero";
 import SectionDescribtion from "@components/section-description/SectionDescribtion";
+import SectionImages from "@components/section-images/SectionImages";
 import Logo from "@components/logo/Logo";
 import Header from "@layout/header/Header";
 import Hamburger from "@components/hamburger/Hamburger";
@@ -22,6 +23,7 @@ export default function Weddings({ isOpen, setIsOpen }) {
             <div key={id}>
               <SectionHero section={linkName} imageSrc={link.slice(4, -1)} videoSrc={video} />
               <SectionDescribtion title={urls.linkName} />
+              <SectionImages src={link.slice(4, -1)} alt={linkName} />
             </div>
           );
         }

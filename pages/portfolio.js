@@ -1,4 +1,6 @@
 // hooks
+import useFetch from "@hooks/useFetch";
+import { useState } from "react";
 import Link from "next/link";
 
 // components
@@ -12,28 +14,29 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 // helpers
 import { screenSizes } from "helpers/helpers";
 
-export const getServerSideProps = async () => {
-  const res = await fetch("https://api.pexels.com/v1/search?query=nature", {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      Authorization: process.env.API_KEY,
-    },
-  });
-  const data = await res.json();
+export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
+  const [category, setCategory] = useState("");
+  const [userInput, setUserInput] = useState("");
 
-  return {
-    props: {
-      data,
-    },
-  };
-};
+  function handleCategory() {
+    setUserInput(e.target.value);
+  }
 
-export default function Portfolio({ mediaQueries, data: { photos }, isOpen, setIsOpen }) {
+  function handleSubmit() {
+    e.preventDefault();
+    setCategory();
+    setUserInput("");
+  }
+
+  const { data, loading } = useFetch(
+    `https://api.pexels.com/v1/search?query=${category || "people"}`
+  );
+
+  console.log(data);
+
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };
   });
-
   return (
     <div className="container">
       <Header>
@@ -52,15 +55,19 @@ export default function Portfolio({ mediaQueries, data: { photos }, isOpen, setI
       </Header>
 
       {/* componetn */}
-      <input type="text" />
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={userInput} onChange={handleCategory} />
+        <Button>Submit</Button>
+      </form>
       {/* componetn */}
 
       <main style={{ marginTop: "2rem" }}>
         <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
           <Masonry gutter="20px">
-            {photos.map(image => {
-              return <GridImage key={image.id} image={image} />;
-            })}
+            {data &&
+              data.photos.map(image => {
+                return <GridImage key={image.id} image={image} />;
+              })}
           </Masonry>
         </ResponsiveMasonry>
       </main>
