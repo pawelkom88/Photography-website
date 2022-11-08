@@ -62,24 +62,4 @@ urls.forEach(({ link }) => {
   images.push(link);
 });
 
-// create grid images
-const gridImages = [];
-let imageIndex = 0;
 
-for (let i = 1; i <= 80; i++) {
-  let item = {
-    id: i,
-    title: `Image ${i}`,
-    image: images[imageIndex],
-  };
-
-  gridImages.push(item);
-
-  imageIndex++;
-
-  if (imageIndex > images.length - 1) imageIndex = 0;
-}
-
-export { gridImages };
-
-// helpers

@@ -20,7 +20,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { container, item } from "@helpers/animation";
 import { mainPageSeo } from "@helpers/seo";
 import { parseCookies } from "lib/parseCookies";
-import { getHoverClr } from "@helpers/helpers";
 import Cookies from "js-cookie";
 
 export default function Home({ initialValue = true, mediaQueries, isOpen, setIsOpen }) {
@@ -29,7 +28,7 @@ export default function Home({ initialValue = true, mediaQueries, isOpen, setIsO
   const [loading, setLoading] = useState(() => JSON.parse(initialValue));
 
   // add white color on hover, only on big screens
-  const hoverColor = getHoverClr(isHovering, !mediaQueries);
+  const hoverColor = isHovering && !mediaQueries ? "white" : "grey";
 
   // Add cookies based on loading value
   useEffect(() => {
