@@ -19,15 +19,10 @@ export default function Weddings({ isOpen, setIsOpen }) {
       {urls.map(({ id, linkName, link, video }) => {
         if (linkName === "Weddings") {
           return (
-            <>
-              <SectionHero
-                key={id}
-                section={linkName}
-                imageSrc={link.slice(4, -1)}
-                videoSrc={video}
-              />
+            <div key={id}>
+              <SectionHero section={linkName} imageSrc={link.slice(4, -1)} videoSrc={video} />
               <SectionDescribtion title={urls.linkName} />
-            </>
+            </div>
           );
         }
       })}
