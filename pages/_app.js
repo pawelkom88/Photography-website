@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { screenSize } from "helpers/helpers";
 import { pageTransitionVariants } from "helpers/animation";
 import { DefaultSeo } from "next-seo";
-import { SEO } from "../seo.config";
+import { SEO, additionalLinkTags } from "../seo.config";
 
 // styles
 import "styles/globals.css";
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps, router }) {
         innerScale={1.7}
         outerScale={5}
       />
-      <DefaultSeo openGraph={openGraph} twitter={twitter} />
+      <DefaultSeo openGraph={openGraph} twitter={twitter} additionalLinkTags={additionalLinkTags} />
       <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
     </motion.div>
   );
