@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 export default function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  console.log(process.env.API_KEY);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     let didCancel = false;
 
@@ -21,17 +22,18 @@ export default function useFetch(url) {
           });
 
           if (!response.ok) {
-            // const message = `An error has occured: ${response.status}`;
-
+            setError(true);
             setLoading(false);
           }
           const data = await response.json();
           setData(data);
           setLoading(false);
+          setError(null)
         }
       } catch {
         setLoading(false);
       }
+      setError(null);
     }
     fetchData();
 

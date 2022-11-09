@@ -54,12 +54,3 @@ export const urls = [
     poster: "/assets/videos/",
   },
 ];
-
-// extract link to images from url array and create a new one
-export const images = [];
-
-urls.forEach(({ link }) => {
-  images.push(link);
-});
-
-

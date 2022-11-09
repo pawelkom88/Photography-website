@@ -1,0 +1,27 @@
+.form {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .form {
+    min-height: 15vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+  }
+}
+
+.input {
+  padding: 0.3rem 1rem;
+}
+
+@media (min-width: 800px) {
+  .input {
+    margin-right: 1rem;
+  }
+}

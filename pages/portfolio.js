@@ -1,6 +1,6 @@
 // hooks
-import useFetch from "@hooks/useFetch";
 import { useState } from "react";
+import useFetch from "@hooks/useFetch";
 import Link from "next/link";
 
 // components
@@ -9,31 +9,25 @@ import Button from "@components/button/Button";
 import Hamburger from "@components/hamburger/Hamburger";
 import Logo from "@components/logo/Logo";
 import GridImage from "@components/grid-image/GridImage";
+import Spinner from "@components/spinner/Spinner";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import styles from "@styles/main.module.css";
 
 // helpers
 import { screenSizes } from "helpers/helpers";
+import SearchBox from "@components/search-box/SearchBox";
 
 export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
   const [category, setCategory] = useState("");
-  const [userInput, setUserInput] = useState("");
-  // comment
+
+  const { data, loading, error } = useFetch(
+    `https://api.pexels.com/v1/search?query=${category || "people"}`
+  );
+  console.log(data);
+  // create dynamic breakpoints for grid
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };
   });
-  // const { data, loading } = useFetch(
-  //   `https://api.pexels.com/v1/search?query=${category || "people"}`
-  // );
-
-  function handleCategory() {
-    setUserInput(e.target.value);
-  }
-
-  function handleSubmit() {
-    e.preventDefault();
-    setCategory();
-    setUserInput("");
-  }
 
   return (
     <div className="container">
@@ -51,24 +45,33 @@ export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
           )}
         </div>
       </Header>
+      <SearchBox setCategory={setCategory} />
+      <main className={`${loading ? styles.center : ""} ${styles.main}`}>
+        {/* When error */}
+        {error && <p>An error has occured</p>}
 
-      {/* componetn */}
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={userInput} onChange={handleCategory} />
-        <Button>Submit</Button>
-      </form>
-      {/* componetn */}
+        {/* While fetching photos */}
+        {loading && <Spinner />}
 
-      <main style={{ marginTop: "2rem" }}>
-        {/* <div>{loading && "Loading..."}</div>
+        {/* When a request has no response     */}
+        {data && !data?.photos?.length && !data.error && (
+          <p style={{ textAlign: "center" }}>No photos found. Please try again.</p>
+        )}
+
+        {/* When rate exceeded */}
+        {data && data.error === "Rate limit exceeded" && (
+          <p style={{ textAlign: "center" }}>{data.error} Try again later</p>
+        )}
+
         <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
           <Masonry gutter="20px">
             {data &&
-              data.photos.map(image => {
+              !error &&
+              data?.photos?.map(image => {
                 return <GridImage key={image.id} image={image} />;
               })}
           </Masonry>
-        </ResponsiveMasonry> */}
+        </ResponsiveMasonry>
       </main>
     </div>
   );
