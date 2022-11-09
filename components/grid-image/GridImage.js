@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function GridImage({ image }) {
   const { src, alt, width, height } = image;
-  console.log(width);
+
   return (
     <Image
       width={width}
