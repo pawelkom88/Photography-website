@@ -5,7 +5,7 @@ import Header from "@layout/header/Header";
 import Hamburger from "@components/hamburger/Hamburger";
 
 // helpers
-import { urls } from "../helpers/helpers";
+import { sectionData } from "../helpers/helpers";
 
 export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
   return (
@@ -16,7 +16,7 @@ export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </Header>
       </div>
-      {urls.map(({ id, linkName, link, video }) => {
+      {sectionData.map(({ id, linkName, link, video }) => {
         if (linkName === "Properties and Interiors") {
           return (
             <div key={id}>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Image from "next/image";
-import { urls } from "@helpers/helpers";
+import { sectionData } from "@helpers/helpers";
 import styles from "@layout/overlay/overlay.module.css";
 
 export default function BackgroundImage({ onHover, position }) {
@@ -20,7 +20,7 @@ export default function BackgroundImage({ onHover, position }) {
 
   return (
     <>
-      {urls.map(({ id, link, linkName }) => {
+      {sectionData.map(({ id, link, linkName }) => {
         return (
           <div key={id} className="bg-image overlay">
             <Image

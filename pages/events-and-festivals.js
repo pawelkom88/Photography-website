@@ -5,7 +5,7 @@ import Header from "@layout/header/Header";
 import Hamburger from "@components/hamburger/Hamburger";
 
 // helpers
-import { urls } from "../helpers/helpers";
+import { sectionData } from "../helpers/helpers";
 
 export default function Events({ isOpen, setIsOpen }) {
   return (
@@ -16,7 +16,7 @@ export default function Events({ isOpen, setIsOpen }) {
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </Header>
       </div>
-      {urls.map(({ id, linkName, link, video }) => {
+      {sectionData.map(({ id, linkName, link, video }) => {
         if (linkName === "Events and Festivals") {
           return (
             <div key={id}>
@@ -26,7 +26,7 @@ export default function Events({ isOpen, setIsOpen }) {
                 imageSrc={link.slice(4, -1)}
                 videoSrc={video}
               />
-              <SectionDescribtion title={urls.linkName} />
+              <SectionDescribtion title={sectionData.linkName} />
             </div>
           );
         }

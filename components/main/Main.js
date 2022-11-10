@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./main.module.css";
-import { urls } from "@helpers/helpers";
+import { sectionData } from "@helpers/helpers";
 
 export default function Main({ onMouseOver, onMouseOut, variants, hoverColor }) {
   return (
@@ -9,7 +9,7 @@ export default function Main({ onMouseOver, onMouseOut, variants, hoverColor }) 
       <motion.nav variants={variants} className={styles.nav}>
         <span className={`${styles.explore} ${hoverColor}`}>EXPLORE</span>
         <ul className={styles["nav-items"]}>
-          {urls.map(({ linkName }, i) => {
+          {sectionData.map(({ linkName }, i) => {
             return (
               <li
                 key={linkName}
