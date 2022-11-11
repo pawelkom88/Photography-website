@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./section-image.module.css";
+import useFetch from "@hooks/useFetch";
 
-export default function SectionImages({ heading, photosDescription, src, alt }) {
+export default function SectionImages({ category, heading, photosDescription }) {
+  const { data } = useFetch(`https://api.pexels.com/v1/search?query=${category}&per_page=4`);
+
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {}, [selected]);
@@ -10,18 +13,20 @@ export default function SectionImages({ heading, photosDescription, src, alt }) 
   return (
     <section className={styles.section}>
       <div className={styles.left}>
-        <div className={`${styles["image-1"]} ${styles.image}`}>
-          <Image layout="fill" objectFit="cover" src={src} alt={alt} />
-        </div>
-        <div className={`${styles["image-2"]} ${styles.image}`}>
-          <Image layout="fill" objectFit="cover" src={src} alt={alt} />
-        </div>
-        <div className={`${styles["image-3"]} ${styles.image}`}>
-          <Image layout="fill" objectFit="cover" src={src} alt={alt} />
-        </div>
-        <div className={`${styles["image-4"]} ${styles.image}`}>
-          <Image layout="fill" objectFit="cover" src={src} alt={alt} />
-        </div>
+        {data?.photos?.map(({ id, src, alt }, i) => {
+          return (
+            <div key={id} className={`${styles[`image-${i}`]} ${styles.image}`}>
+              <Image
+                layout="fill"
+                objectFit="cover"
+                src={src.large}
+                alt={alt}
+                placeholder="blur"
+                blurDataURL={src.tiny}
+              />
+            </div>
+          );
+        })}
 
         <div className={styles.description}>
           <div className={styles.numbers}>
