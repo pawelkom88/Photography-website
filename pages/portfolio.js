@@ -23,7 +23,7 @@ export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
   const { data, loading, error } = useFetch(
     `https://api.pexels.com/v1/search?query=${category || "people"}`
   );
-  console.log(data);
+  
   // create dynamic breakpoints for grid
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };

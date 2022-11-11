@@ -22,12 +22,11 @@ export default function Weddings({ isOpen, setIsOpen }) {
           return (
             <div key={id}>
               <SectionHero section={linkName} imageSrc={link.slice(4, -1)} videoSrc={video} />
-              <SectionDescribtion title={sectionData.linkName} />
+              <SectionDescribtion title={linkName} />
               <SectionImages
                 heading={linkName}
                 photosDescription={photosDescription}
-                src={link.slice(4, -1)}
-                alt={linkName}
+                category={linkName}
               />
             </div>
           );
