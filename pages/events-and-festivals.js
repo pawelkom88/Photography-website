@@ -1,6 +1,6 @@
 import SectionHero from "@components/section/SectionHero";
 import SectionDescribtion from "@components/section-description/SectionDescribtion";
-import SectionImages from "@components/section-IMAGES/SectionImages";
+import SectionImages from "@components/section-images/SectionImages";
 import Logo from "@components/logo/Logo";
 import Header from "@layout/header/Header";
 import Hamburger from "@components/hamburger/Hamburger";
