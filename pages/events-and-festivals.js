@@ -21,26 +21,26 @@ export default function Events({ isOpen, setIsOpen }) {
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </Header>
       </div>
-      {sectionData.map(({ id, linkName, link, video, photosDescription }) => {
-        if (linkName === "Events and Festivals") {
+      {sectionData.map(({ id, category, link, video, photosDescription }) => {
+        if (category === "Events and Festivals") {
           return (
             <div key={id}>
-              <SectionHero section={linkName} imageSrc={link.slice(4, -1)} videoSrc={video} />
-              <SectionDescribtion title={linkName} />
+              <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
+              <SectionDescribtion title={category} />
               <SectionImages
-                heading={linkName}
+                heading={category}
                 photosDescription={photosDescription}
-                category={linkName}
+                category={category}
               />
               <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
-                {linkName}
+                {category}
               </Marquee>
               <Marquee
                 style={{ marginBottom: "6rem" }}
                 className={styles.marquee}
                 direction="right"
                 speed={60}>
-                {linkName}
+                {category}
               </Marquee>
             </div>
           );

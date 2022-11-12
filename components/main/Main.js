@@ -9,15 +9,15 @@ export default function Main({ onMouseOver, onMouseOut, variants, hoverColor }) 
       <motion.nav variants={variants} className={styles.nav}>
         <span className={`${styles.explore} ${hoverColor}`}>EXPLORE</span>
         <ul className={styles["nav-items"]}>
-          {sectionData.map(({ linkName }, i) => {
+          {sectionData.map(({ category }, i) => {
             return (
               <li
-                key={linkName}
+                key={category}
                 onMouseEnter={() => onMouseOver(i)}
                 onMouseLeave={onMouseOut}
                 className={styles["nav-item"]}>
-                <Link href={`/${linkName.toLowerCase().replace(/ /g, "-")}`}>
-                  <a>{linkName}</a>
+                <Link href={`/${category.toLowerCase().replace(/ /g, "-")}`}>
+                  <a>{category}</a>
                 </Link>
               </li>
             );

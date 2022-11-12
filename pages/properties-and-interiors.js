@@ -13,6 +13,10 @@ import styles from "@styles/marquee.module.css";
 import { sectionData } from "../helpers/helpers";
 
 export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
+  const sectionDetails = sectionData.filter(
+    section => section.category === "Properties and Interiors"
+  );
+
   return (
     <>
       <div className="container">
@@ -21,30 +25,28 @@ export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </Header>
       </div>
-      {sectionData.map(({ id, linkName, link, video, photosDescription }) => {
-        if (linkName === "Properties and Interiors") {
-          return (
-            <div key={id}>
-              <SectionHero section={linkName} imageSrc={link.slice(4, -1)} videoSrc={video} />
-              <SectionDescribtion title={linkName} />
-              <SectionImages
-                heading={linkName}
-                photosDescription={photosDescription}
-                category={linkName}
-              />
-              <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
-                {linkName}
-              </Marquee>
-              <Marquee
-                style={{ marginBottom: "6rem" }}
-                className={styles.marquee}
-                direction="right"
-                speed={60}>
-                {linkName}
-              </Marquee>
-            </div>
-          );
-        }
+      {sectionDetails.map(({ id, category, link, video, photosDescription }) => {
+        return (
+          <div key={id}>
+            <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
+            <SectionDescribtion title={category} />
+            <SectionImages
+              heading={category}
+              photosDescription={photosDescription}
+              category={category}
+            />
+            <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
+              {category}
+            </Marquee>
+            <Marquee
+              style={{ marginBottom: "6rem" }}
+              className={styles.marquee}
+              direction="right"
+              speed={60}>
+              {category}
+            </Marquee>
+          </div>
+        );
       })}
     </>
   );

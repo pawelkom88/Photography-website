@@ -7,7 +7,7 @@ export default function Hamburger({ isOpen, setIsOpen }) {
       <button
         className={`${isOpen ? styles.active : ""} ${styles.hamburger}`}
         onClick={() => setIsOpen(!isOpen)}></button>
-      <MenuMobile isOpen={isOpen} />
+      <MenuMobile isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 }

@@ -20,14 +20,14 @@ export default function BackgroundImage({ onHover, position }) {
 
   return (
     <>
-      {sectionData.map(({ id, link, linkName }) => {
+      {sectionData.map(({ id, link, category }) => {
         return (
           <div key={id} className="bg-image overlay">
             <Image
               src={link.slice(4, -1)}
               layout="fill"
               objectFit="cover"
-              alt={`${linkName} photo`}
+              alt={`${category} photo`}
               loading="eager"
               quality={50}
             />

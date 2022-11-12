@@ -7,7 +7,7 @@ import "@fontsource/bodoni-moda";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import useMatchMedia from "@hooks/useMatchMedia";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // helpers
 import { screenSize } from "helpers/helpers";
@@ -28,12 +28,7 @@ function MyApp({ Component, pageProps, router }) {
 
   const { openGraph, twitter } = SEO;
   return (
-    <motion.div
-      key={router.route}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageTransitionVariants}>
+    <AnimatePresence exitBeforeEnter initial={false}>
       <AnimatedCursor
         innerSize={18}
         outerSize={18}
@@ -43,8 +38,15 @@ function MyApp({ Component, pageProps, router }) {
         outerScale={5}
       />
       <DefaultSeo openGraph={openGraph} twitter={twitter} additionalLinkTags={additionalLinkTags} />
-      <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
-    </motion.div>
+      <motion.div
+        key={router.route}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageTransitionVariants}>
+        <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
