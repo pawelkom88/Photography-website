@@ -4,6 +4,10 @@ import SectionImages from "@components/section-IMAGES/SectionImages";
 import Logo from "@components/logo/Logo";
 import Header from "@layout/header/Header";
 import Hamburger from "@components/hamburger/Hamburger";
+import Marquee from "react-fast-marquee";
+
+// styles
+import styles from "@styles/marquee.module.css";
 
 // helpers
 import { sectionData } from "../helpers/helpers";
@@ -28,6 +32,16 @@ export default function Events({ isOpen, setIsOpen }) {
                 photosDescription={photosDescription}
                 category={linkName}
               />
+              <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
+                {linkName}
+              </Marquee>
+              <Marquee
+                style={{ marginBottom: "6rem" }}
+                className={styles.marquee}
+                direction="right"
+                speed={60}>
+                {linkName}
+              </Marquee>
             </div>
           );
         }

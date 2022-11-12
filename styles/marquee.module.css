@@ -1,0 +1,4 @@
+.marquee {
+  font-family: var(--secondary-font);
+  font-size: clamp(2rem, 0.8rem + 2.9vw, 4.3rem);
+}
