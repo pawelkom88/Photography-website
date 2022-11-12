@@ -13,6 +13,8 @@ import styles from "@styles/marquee.module.css";
 import { sectionData } from "../helpers/helpers";
 
 export default function Themed({ isOpen, setIsOpen }) {
+  const sectionDetails = sectionData.filter(section => section.category === "Themed");
+
   return (
     <>
       <div className="container">
@@ -21,30 +23,28 @@ export default function Themed({ isOpen, setIsOpen }) {
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </Header>
       </div>
-      {sectionData.map(({ id, linkName, link, video, photosDescription }) => {
-        if (linkName === "Themed") {
-          return (
-            <div key={id}>
-              <SectionHero section={linkName} imageSrc={link.slice(4, -1)} videoSrc={video} />
-              <SectionDescribtion title={linkName} />
-              <SectionImages
-                heading={linkName}
-                photosDescription={photosDescription}
-                category={linkName}
-              />
-              <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
-                {linkName}
-              </Marquee>
-              <Marquee
-                style={{ marginBottom: "6rem" }}
-                className={styles.marquee}
-                direction="right"
-                speed={60}>
-                {linkName}
-              </Marquee>
-            </div>
-          );
-        }
+      {sectionDetails.map(({ id, category, link, video, photosDescription }) => {
+        return (
+          <div key={id}>
+            <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
+            <SectionDescribtion title={category} />
+            <SectionImages
+              heading={category}
+              photosDescription={photosDescription}
+              category={category}
+            />
+            <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
+              {category}
+            </Marquee>
+            <Marquee
+              style={{ marginBottom: "6rem" }}
+              className={styles.marquee}
+              direction="right"
+              speed={60}>
+              {category}
+            </Marquee>
+          </div>
+        );
       })}
     </>
   );

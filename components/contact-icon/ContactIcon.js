@@ -18,6 +18,7 @@ export default function ContactIcon({
 
   return (
     <motion.div
+      key="contact-icons"
       initial="closed"
       animate="open"
       exit="closed"
