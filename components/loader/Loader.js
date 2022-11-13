@@ -1,41 +1,11 @@
 import { motion } from "framer-motion";
+import { wrapper, child, word1, word2 } from "@helpers/animation";
 import styles from "./loader.module.css";
 
 export default function Loader({ onLoading }) {
-  const word1 = "JOHN DOE".split("");
-  const word2 = "PHOTOGRAPHY".split("");
-
-  const container = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-        ease: "linear",
-      },
-    },
-  };
-
-  const child = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 2.5,
-        ease: "linear",
-      },
-    },
-  };
-
   return (
     <motion.div
-      variants={container}
+      variants={wrapper}
       animate="animate"
       initial="initial"
       exit="exit"
