@@ -23,12 +23,14 @@ function MyApp({ Component, pageProps, router }) {
   const { openGraph, twitter } = SEO;
 
   return (
-    <AnimatePresence exitBeforeEnter initial={true}>
+    <>
       <DefaultSeo openGraph={openGraph} twitter={twitter} additionalLinkTags={additionalLinkTags} />
-      <PageTransition transitionKey={router.route}>
-        <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
-      </PageTransition>
-    </AnimatePresence>
+      <AnimatePresence exitBeforeEnter initial={true}>
+        <PageTransition transitionKey={router.route}>
+          <Component mediaQueries={matches} {...pageProps} isOpen={isOpen} setIsOpen={setIsOpen} />
+        </PageTransition>
+      </AnimatePresence>
+    </>
   );
 }
 
