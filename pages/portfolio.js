@@ -23,7 +23,7 @@ export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
   const { data, loading, error } = useFetch(
     `https://api.pexels.com/v1/search?query=${category || "people"}`
   );
-  
+
   // create dynamic breakpoints for grid
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };
@@ -65,11 +65,14 @@ export default function Portfolio({ mediaQueries, isOpen, setIsOpen }) {
 
         <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
           <Masonry gutter="20px">
-            {data &&
-              !error &&
+            {data && !error ? (
               data?.photos?.map(image => {
                 return <GridImage key={image.id} image={image} />;
-              })}
+              })
+            ) : (
+              // avoid error message in the console that children prop is required in Masonry Grid Component
+              <></>
+            )}
           </Masonry>
         </ResponsiveMasonry>
       </main>
