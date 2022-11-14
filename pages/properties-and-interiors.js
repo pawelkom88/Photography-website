@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+
+// component
 import SectionHero from "@components/section/SectionHero";
 import SectionDescribtion from "@components/section-description/SectionDescribtion";
 import SectionImages from "@components/section-images/SectionImages";
@@ -12,10 +15,15 @@ import styles from "@styles/marquee.module.css";
 // helpers
 import { sectionData } from "../helpers/helpers";
 
-export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
-  const sectionDetails = sectionData.filter(
+export default function PropertiesAndInteriors({ isOpen, setIsOpen, setCategory, data }) {
+  const [{ category, link, video, photosDescription }] = sectionData.filter(
     section => section.category === "Properties and Interiors"
   );
+
+  useEffect(() => {
+    setCategory(category);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -25,29 +33,24 @@ export default function PropertiesAndInteriors({ isOpen, setIsOpen }) {
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </Header>
       </div>
-      {sectionDetails.map(({ id, category, link, video, photosDescription }) => {
-        return (
-          <div key={id}>
-            <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
-            <SectionDescribtion title={category} />
-            <SectionImages
-              heading={category}
-              photosDescription={photosDescription}
-              category={category}
-            />
-            <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
-              {category}
-            </Marquee>
-            <Marquee
-              style={{ marginBottom: "6rem" }}
-              className={styles.marquee}
-              direction="right"
-              speed={60}>
-              {category}
-            </Marquee>
-          </div>
-        );
-      })}
+      <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
+      <SectionDescribtion title={category} />
+      <SectionImages
+        data={data}
+        heading={category}
+        photosDescription={photosDescription}
+        category={category}
+      />
+      <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
+        {category}
+      </Marquee>
+      <Marquee
+        style={{ marginBottom: "6rem" }}
+        className={styles.marquee}
+        direction="right"
+        speed={60}>
+        {category}
+      </Marquee>
     </>
   );
 }
