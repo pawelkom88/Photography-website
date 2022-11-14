@@ -38,6 +38,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 .content {
@@ -47,8 +50,19 @@
   margin-top: 2rem;
 }
 
+.filter {
+  font-weight: normal;
+  filter: brightness(30%);
+}
+
+.active {
+  font-weight: bold;
+  filter: brightness(100%);
+}
+
 .image {
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
 .image-0 {
