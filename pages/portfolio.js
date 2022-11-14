@@ -18,8 +18,6 @@ import SearchBox from "@components/search-box/SearchBox";
 
 export default function Portfolio({
   mediaQueries,
-  isOpen,
-  setIsOpen,
   setNumOfPages,
   setCategory,
   data,
@@ -43,7 +41,7 @@ export default function Portfolio({
               </a>
             </Link>
           ) : (
-            <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Hamburger  />
           )}
         </div>
       </Header>

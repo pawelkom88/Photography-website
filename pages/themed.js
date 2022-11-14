@@ -15,7 +15,7 @@ import styles from "@styles/marquee.module.css";
 // helpers
 import { sectionData } from "../helpers/helpers";
 
-export default function Themed({ isOpen, setIsOpen, setCategory, data }) {
+export default function Themed({  setCategory, data }) {
   const [{ category, link, video, photosDescription }] = sectionData.filter(
     section => section.category === "Themed"
   );
@@ -30,7 +30,7 @@ export default function Themed({ isOpen, setIsOpen, setCategory, data }) {
       <div className="container">
         <Header>
           <Logo></Logo>
-          <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Hamburger/>
         </Header>
       </div>
       <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
