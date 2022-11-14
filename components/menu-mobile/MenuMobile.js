@@ -8,10 +8,10 @@ import styles from "./menu-mobile.module.css";
 
 export default function MenuMobile({ isOpen, setIsOpen }) {
   useEffect(() => {
-    if (isOpen) {
-      document.querySelector("body").classList.add("hidden");
-    } else {
+    if (!isOpen) {
       document.querySelector("body").classList.remove("hidden");
+    } else {
+      document.querySelector("body").classList.add("hidden");
     }
   }, [isOpen]);
 
@@ -19,6 +19,7 @@ export default function MenuMobile({ isOpen, setIsOpen }) {
     <AnimatePresence exitBeforeEnter initial={false}>
       {isOpen && (
         <motion.div
+          style={`${!isOpen ? "hidden" : ""}`}
           key="menu"
           className={styles["mobile-menu"]}
           initial="initial"

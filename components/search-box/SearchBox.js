@@ -15,19 +15,31 @@ export default function SearchBox({ setCategory }) {
     setUserInput("");
   }
   return (
-    <form onSubmit={e => handleSubmit(e, userInput)} className={styles.form}>
-      <label htmlFor="category">
+    <div className={styles.container}>
+      <div>
+        <label htmlFor="number of pages">Select number of images</label>
+        <select id="number of pages">
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select>
+      </div>
+
+      <form onSubmit={e => handleSubmit(e, userInput)} className={styles.form}>
+        <label htmlFor="category">Category name</label>
         <input
           className={styles.input}
           id="category"
           type="text"
           value={userInput}
           onChange={handleCategory}
-          placeholder="Enter category name"
+          placeholder="e.g: wedding"
           required
         />
-      </label>
+      </form>
+
       <Button>Submit</Button>
-    </form>
+    </div>
   );
 }

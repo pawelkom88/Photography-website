@@ -22,7 +22,7 @@ import { mainPageSeo } from "@helpers/seo";
 import { parseCookies } from "lib/parseCookies";
 import Cookies from "js-cookie";
 
-export default function Home({ initialValue = true, mediaQueries, isOpen, setIsOpen }) {
+export default function Home({ initialValue = true, mediaQueries }) {
   const [isHovering, setIsHovering] = useState(false);
   const [position, setPosition] = useState(null);
   const [loading, setLoading] = useState(() => JSON.parse(initialValue));
@@ -39,7 +39,7 @@ export default function Home({ initialValue = true, mediaQueries, isOpen, setIsO
   let navBtn;
 
   if (mediaQueries) {
-    navBtn = <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />;
+    navBtn = <Hamburger />;
   } else {
     navBtn = (
       <Button className={hoverColor}>

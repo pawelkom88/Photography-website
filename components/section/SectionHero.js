@@ -3,20 +3,19 @@ import Image from "next/image";
 import styles from "@styles/section.module.css";
 import { motion } from "framer-motion";
 
-export default function SectionHero({ videoSrc, imageSrc, section }) {
-
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const variants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        ease: "easeIn",
-        duration: 1,
-      },
+const variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ease: "easeIn",
+      duration: 1,
     },
-  };
+  },
+};
+
+export default function SectionHero({ videoSrc, imageSrc, section }) {
+  const [isPlaying, setIsPlaying] = useState(true);
 
   return (
     <section className={styles.section}>

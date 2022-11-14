@@ -1,50 +1,71 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Image from "next/image";
 import styles from "./section-image.module.css";
-import useFetch from "@hooks/useFetch";
+import Spinner from "@components/spinner/Spinner";
+import { ErrorBoundary } from "react-error-boundary";
 
-export default function SectionImages({ category, heading, photosDescription }) {
-  const { data } = useFetch(`https://api.pexels.com/v1/search?query=${category}&per_page=4`);
+export default function SectionImages({ data, heading, photosDescription }) {
+  const [selected, setSelected] = useState(0);
 
-  const [selected, setSelected] = useState(false);
+  useEffect(() => {
+    function isActive() {
+      setSelected(prevNum => prevNum + 1);
 
-  useEffect(() => {}, [selected]);
+      if (selected >= data?.photos.length - 1) {
+        setSelected(0);
+      }
+    }
+
+    const timer = setTimeout(isActive, 6000);
+
+    return () => clearTimeout(timer);
+  }, [selected, data?.photos?.length]);
 
   return (
     <section className={styles.section}>
       <div className={styles.left}>
-        {data?.photos?.map(({ id, src, alt }, i) => {
-          return (
-            <div key={id} className={`${styles[`image-${i}`]} ${styles.image}`}>
-              <Image
-                layout="fill"
-                objectFit="cover"
-                src={src.large}
-                alt={alt}
-                placeholder="blur"
-                blurDataURL={src.tiny}
-              />
-            </div>
-          );
-        })}
-
+        <ErrorBoundary fallback={"An error has occured. Try again later"}>
+          <Suspense fallback={<Spinner />}>
+            {data?.photos?.map(({ id, src, alt }, i) => {
+              return (
+                <div
+                  key={id}
+                  className={`${selected === i ? styles.active : styles.filter} ${
+                    styles[`image-${i}`]
+                  } ${styles.image}`}>
+                  <Image
+                    layout="fill"
+                    objectFit="cover"
+                    src={src.large}
+                    alt={alt}
+                    placeholder="blur"
+                    blurDataURL={src.tiny}
+                  />
+                </div>
+              );
+            })}
+          </Suspense>
+        </ErrorBoundary>
         <div className={styles.description}>
           <div className={styles.numbers}>
-            <span>01</span>
-            <span>02</span>
-            <span>03</span>
-            <span>04</span>
+            {photosDescription.map(({ id }, i) => {
+              return (
+                <span className={`${selected === i ? styles.active : ""} `} key={id}>{`0${
+                  id + 1
+                }`}</span>
+              );
+            })}
           </div>
+
           <div className={styles.content}>
             {photosDescription.map(({ id, description }) => {
-              // if ((selected)) {
-              return <p key={id}>{description}</p>;
-              // }
+              if (selected === id) {
+                return <p key={id}>{description}</p>;
+              }
             })}
           </div>
         </div>
       </div>
-
       <article className={styles.right}>
         <h3 className={styles.heading}>{heading}</h3>
         <p className={styles.text}>
