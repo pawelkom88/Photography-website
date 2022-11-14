@@ -21,7 +21,6 @@ import "styles/globals.css";
 function MyApp({ Component, pageProps, router }) {
   const [numOfPages, setNumOfPages] = useState(4);
   const [category, setCategory] = useState("people");
-  const [isOpen, setIsOpen] = useState(false);
   const { matches } = useMatchMedia(screenSize);
   const { openGraph, twitter } = SEO;
   const { data } = useFetch(
@@ -37,8 +36,6 @@ function MyApp({ Component, pageProps, router }) {
             {...pageProps}
             data={data}
             mediaQueries={matches}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
             setCategory={setCategory}
             setNumOfPages={setNumOfPages}
           />
