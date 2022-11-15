@@ -21,7 +21,6 @@ export default function Loader({ onLoading }) {
           </motion.span>
         ))}
       </div>
-
       <div>
         {word2.map((word, index) => (
           <motion.span variants={child} key={index}>

@@ -3,18 +3,19 @@ import { motion } from "framer-motion";
 import { sideVariants } from "@helpers/animation";
 import classes from "./contact-icon.module.css";
 
+const itemVariants = {
+  closed: {
+    x: -100,
+  },
+  open: { x: 0 },
+};
+
 export default function ContactIcon({
   onHover = true,
   styles,
   flexDirection = "row",
   fill = "var(--primary-clr)",
 }) {
-  const itemVariants = {
-    closed: {
-      x: -100,
-    },
-    open: { x: 0 },
-  };
 
   return (
     <motion.div
