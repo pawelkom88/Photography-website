@@ -13,10 +13,11 @@ import Marquee from "react-fast-marquee";
 import styles from "@styles/marquee.module.css";
 
 // helpers
-import { sectionData } from "../helpers/helpers";
+import dataJSON from "@helpers/data";
+
 
 export default function Weddings({ setCategory, data }) {
-  const [{ category, link, video, photosDescription }] = sectionData.filter(
+  const [{ category, link, video, photosDescription, content }] = dataJSON.filter(
     section => section?.category === "Weddings"
   );
 
@@ -40,6 +41,7 @@ export default function Weddings({ setCategory, data }) {
         heading={category}
         photosDescription={photosDescription}
         category={category}
+        content={content}
       />
       <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
         {category}

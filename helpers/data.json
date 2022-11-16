@@ -1,0 +1,158 @@
+[
+  {
+    "id": 0,
+    "link": "url(/assets/images/w1.webp)",
+    "category": "Weddings",
+    "video": "/assets/videos/wedding_video.mp4",
+    "poster": "/assets/videos/",
+    "content": "This is section description",
+    "photosDescription": [
+      {
+        "id": 0,
+        "description": "Description for image 1"
+      },
+      {
+        "id": 1,
+        "description": "Description for image 2"
+      },
+      {
+        "id": 2,
+        "description": "Description for image 3"
+      },
+      {
+        "id": 3,
+        "description": "Description for image 4"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "link": "url(/assets/images/p1.webp)",
+    "category": "Portraits",
+    "video": "/assets/videos/portrait_video.mp4",
+    "poster": "/assets/videos/",
+    "content": "This is section description",
+    "photosDescription": [
+      {
+        "id": 0,
+        "description": "Description for image 1"
+      },
+      {
+        "id": 1,
+        "description": "Description for image 2"
+      },
+      {
+        "id": 2,
+        "description": "Description for image 3"
+      },
+      {
+        "id": 3,
+        "description": "Description for image 4"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "link": "url(/assets/images/b1.webp)",
+    "category": "Business Photography",
+    "video": "/assets/videos/business_video.mp4",
+    "poster": "/assets/videos/",
+    "content": "This is section description",
+    "photosDescription": [
+      {
+        "id": 0,
+        "description": "Description for image 1"
+      },
+      {
+        "id": 1,
+        "description": "Description for image 2"
+      },
+      {
+        "id": 2,
+        "description": "Description for image 3"
+      },
+      {
+        "id": 3,
+        "description": "Description for image 4"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "link": "url(/assets/images/e1.webp)",
+    "category": "Events and Festivals",
+    "video": "/assets/videos/events_video.mp4",
+    "poster": "/assets/videos/",
+    "content": "This is section description",
+    "photosDescription": [
+      {
+        "id": 0,
+        "description": "Description for image 1"
+      },
+      {
+        "id": 1,
+        "description": "Description for image 2"
+      },
+      {
+        "id": 2,
+        "description": "Description for image 3"
+      },
+      {
+        "id": 3,
+        "description": "Description for image 4"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "link": "url(/assets/images/pp1.webp)",
+    "category": "Themed",
+    "video": "/assets/videos/themed_video.mp4",
+    "poster": "/assets/videos/",
+    "content": "This is section description",
+    "photosDescription": [
+      {
+        "id": 0,
+        "description": "Description for image 1"
+      },
+      {
+        "id": 1,
+        "description": "Description for image 2"
+      },
+      {
+        "id": 2,
+        "description": "Description for image 3"
+      },
+      {
+        "id": 3,
+        "description": "Description for image 4"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "link": "url(/assets/images/t1.webp)",
+    "category": "Properties and Interiors",
+    "video": "/assets/videos/property_video.mp4",
+    "poster": "/assets/videos/",
+    "content": "This is section description",
+    "photosDescription": [
+      {
+        "id": 0,
+        "description": "Description for image 1"
+      },
+      {
+        "id": 1,
+        "description": "Description for image 2"
+      },
+      {
+        "id": 2,
+        "description": "Description for image 3"
+      },
+      {
+        "id": 3,
+        "description": "Description for image 4"
+      }
+    ]
+  }
+]

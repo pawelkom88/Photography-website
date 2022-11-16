@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./main.module.css";
-import { sectionData } from "@helpers/helpers";
+import dataJSON from "@helpers/data";
 
 export default function Main({ onMouseOver, onMouseOut, variants, hoverColor }) {
   return (
@@ -9,7 +9,7 @@ export default function Main({ onMouseOver, onMouseOut, variants, hoverColor }) 
       <motion.nav variants={variants} className={styles.nav}>
         <span className={`${styles.explore} ${hoverColor}`}>EXPLORE</span>
         <ul className={styles["nav-items"]}>
-          {sectionData.map(({ category }, i) => {
+          {dataJSON.map(({ category }, i) => {
             return (
               <li
                 key={category}

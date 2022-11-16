@@ -1,10 +1,8 @@
 // hooks
 import { Suspense, lazy } from "react";
-import Link from "next/link";
 
 // components
 import Header from "@layout/header/Header";
-import Button from "@components/button/Button";
 import Hamburger from "@components/hamburger/Hamburger";
 import Logo from "@components/logo/Logo";
 import Spinner from "@components/spinner/Spinner";
@@ -16,12 +14,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { screenSizes } from "helpers/helpers";
 import SearchBox from "@components/search-box/SearchBox";
 
-export default function Portfolio({
-  mediaQueries,
-  setNumOfPages,
-  setCategory,
-  data,
-}) {
+export default function Portfolio({ setNumOfPages, setCategory, data }) {
   const GridImage = lazy(() => import("@components/grid-image/GridImage"));
 
   // create dynamic breakpoints for grid
@@ -33,17 +26,7 @@ export default function Portfolio({
     <div className="container">
       <Header>
         <Logo />
-        <div>
-          {!mediaQueries ? (
-            <Link href="/about">
-              <a>
-                <Button>ABOUT</Button>
-              </a>
-            </Link>
-          ) : (
-            <Hamburger  />
-          )}
-        </div>
+        <Hamburger />
       </Header>
       <SearchBox setCategory={setCategory} setNumOfPages={setNumOfPages} />
       <main className={`${styles.main}`}>
@@ -51,6 +34,7 @@ export default function Portfolio({
         {data && data.photos.length === 0 && (
           <p style={{ textAlign: "center" }}>Could not find any photos is invalid {category}</p>
         )}
+
         <ErrorBoundary fallback={"An error has occured. Try again later"}>
           <Suspense fallback={<Spinner />}>
             <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>

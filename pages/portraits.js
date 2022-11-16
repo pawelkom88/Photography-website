@@ -13,10 +13,11 @@ import Marquee from "react-fast-marquee";
 import styles from "@styles/marquee.module.css";
 
 // helpers
-import { sectionData } from "@helpers/helpers";
+import dataJSON from "@helpers/data";
+
 
 export default function Portrait({ setCategory, data }) {
-  const [{ category, link, video, photosDescription }] = sectionData.filter(
+  const [{ category, link, video, photosDescription }] = dataJSON.filter(
     section => section.category === "Portraits"
   );
 

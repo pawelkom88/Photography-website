@@ -1,0 +1,23 @@
+.right {
+  grid-column: 5/7;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-right: 2rem;
+}
+
+@media (max-width: 800px) {
+  .right {
+    grid-column: span 6;
+    order: -1;
+    margin: 1rem;
+  }
+}
+
+.heading {
+  font-size: clamp(1rem, -1.5rem + 8vw, 2.7rem);
+  margin-bottom: 1rem;
+}
