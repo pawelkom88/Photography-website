@@ -15,20 +15,13 @@ Here is a working [live demo ](https://joe-doe-photography.netlify.app/)
 
 My goal was to practice, React and Next.js features.
 
-- I used
+- I used Framer Motion library for animations and page transitions
 - I used feature branches and Pull Requests
 
 ## How to navigate this project
 
-- Stateful logic: [Link to example code on GitHub]
-
-- Responsive CSS using Sass:
-  [Navigation bar](https://github.com/pawelkom88/outletity/blob/main/src/components/header/Header.scss)
-
 - The application fetches data from the Pexels API: Examples for the request
   [useFetch hook](https://github.com/pawelkom88/Photography-website/blob/main/hooks/useFetch.js) 
-
-- Error are handling using React Error Boundary
 
 - Integration tests using React Testing Library: [Link to example test on GitHub] (to be done)
 
