@@ -8,7 +8,6 @@ import Logo from "@components/logo/Logo";
 import Spinner from "@components/spinner/Spinner";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import styles from "@styles/main.module.css";
-import { ErrorBoundary } from "react-error-boundary";
 
 // helpers
 import { screenSizes } from "helpers/helpers";
@@ -30,26 +29,23 @@ export default function Portfolio({ setNumOfPages, setCategory, data }) {
       </Header>
       <SearchBox setCategory={setCategory} setNumOfPages={setNumOfPages} />
       <main className={`${styles.main}`}>
-        {/* component ? */}
+        {/* component modal ? */}
         {data && data.photos.length === 0 && (
-          <p style={{ textAlign: "center" }}>Could not find any photos is invalid {category}</p>
+          <p style={{ textAlign: "center" }}>Could not find any photos{category}</p>
         )}
-
-        <ErrorBoundary fallback={"An error has occured. Try again later"}>
-          <Suspense fallback={<Spinner />}>
-            <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
-              <Masonry gutter="20px">
-                {data ? (
-                  data.photos.map(image => {
-                    return <GridImage key={image.id} image={image} />;
-                  })
-                ) : (
-                  <></>
-                )}
-              </Masonry>
-            </ResponsiveMasonry>
-          </Suspense>
-        </ErrorBoundary>
+        <Suspense fallback={<Spinner />}>
+          <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
+            <Masonry gutter="20px">
+              {data ? (
+                data.photos.map(image => {
+                  return <GridImage key={image.id} image={image} />;
+                })
+              ) : (
+                <></>
+              )}
+            </Masonry>
+          </ResponsiveMasonry>
+        </Suspense>
       </main>
     </div>
   );

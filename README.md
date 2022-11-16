@@ -13,7 +13,7 @@ Here is a working [live demo ](https://joe-doe-photography.netlify.app/)
 
 ## How I worked on this project
 
-My goal was to practice basics of React and Next.js.
+My goal was to practice, React and Next.js features.
 
 - I used
 - I used feature branches and Pull Requests
@@ -25,12 +25,12 @@ My goal was to practice basics of React and Next.js.
 - Responsive CSS using Sass:
   [Navigation bar](https://github.com/pawelkom88/outletity/blob/main/src/components/header/Header.scss)
 
-- The application fetches data from the Fake Store API: Examples for the request
-  [useFetch hook](https://github.com/pawelkom88/outletity/blob/main/src/hooks/useFetch.js) and data
-  transformation [to be done]()
+- The application fetches data from the Pexels API: Examples for the request
+  [useFetch hook](https://github.com/pawelkom88/Photography-website/blob/main/hooks/useFetch.js) 
 
-- User data is saved in Firebase, which also handles authentication proccess. (to be done)
+- Error are handling using React Error Boundary
 
 - Integration tests using React Testing Library: [Link to example test on GitHub] (to be done)
 
 ## Why I built the project this way
+
