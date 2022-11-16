@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { sectionData } from "@helpers/helpers";
+import dataJSON from "@helpers/data";
 import styles from "@layout/overlay/overlay.module.css";
 
 export default function BackgroundImage({ onHover, position }) {
   return (
     <>
-      {sectionData.map(({ id, link, category }, index) => {
+      {dataJSON.map(({ id, link, category }, index) => {
         const categoryBgImage = onHover && position === index ? styles.on : styles.off;
 
         return (
