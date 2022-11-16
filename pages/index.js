@@ -1,5 +1,6 @@
 // hooks
 import { useState, useEffect } from "react";
+import useMatchMedia from "@hooks/useMatchMedia";
 
 // components
 import Link from "next/link";
@@ -20,15 +21,17 @@ import { motion } from "framer-motion";
 import { container, item } from "@helpers/animation";
 import { mainPageSeo } from "@helpers/seo";
 import { parseCookies } from "lib/parseCookies";
+import { screenSize } from "helpers/helpers";
 import Cookies from "js-cookie";
 
-export default function Home({ initialValue = true, mediaQueries }) {
+export default function Home({ initialValue = true }) {
   const [isHovering, setIsHovering] = useState(false);
   const [position, setPosition] = useState(null);
   const [loading, setLoading] = useState(() => JSON.parse(initialValue));
+  const { matches } = useMatchMedia(screenSize);
 
   // add white color on hover, only on big screens
-  const hoverColor = isHovering && !mediaQueries ? "white" : "grey";
+  const hoverColor = isHovering && !matches ? "white" : "grey";
 
   // Add cookies based on loading value
   useEffect(() => {
@@ -38,7 +41,7 @@ export default function Home({ initialValue = true, mediaQueries }) {
   // render nav button depends on screen size
   let navBtn;
 
-  if (mediaQueries) {
+  if (matches) {
     navBtn = <Hamburger />;
   } else {
     navBtn = (
@@ -89,12 +92,12 @@ export default function Home({ initialValue = true, mediaQueries }) {
               Discover the collections of modern, captivating <br />
               and uniquely beautiful photographs.
             </p>
-            {!mediaQueries && (
+            {!matches && (
               <ContactIcon styles={{ bottom: "2.8rem", right: 0 }} onHover={isHovering} />
             )}
           </Footer>
           <Overlay>
-            {!mediaQueries && <BackgroundImage position={position} onHover={isHovering} />}
+            {!matches && <BackgroundImage position={position} onHover={isHovering} />}
           </Overlay>
         </motion.div>
       )}

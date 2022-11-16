@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 
 // component
 import SectionHero from "@components/section/SectionHero";
@@ -7,6 +8,7 @@ import SectionImages from "@components/section-images/SectionImages";
 import Logo from "@components/logo/Logo";
 import Header from "@layout/header/Header";
 import Hamburger from "@components/hamburger/Hamburger";
+import Modal from "@components/modal/Modal";
 import Marquee from "react-fast-marquee";
 
 // styles
@@ -15,8 +17,7 @@ import styles from "@styles/marquee.module.css";
 // helpers
 import dataJSON from "@helpers/data";
 
-
-export default function Weddings({ setCategory, data }) {
+export default function Weddings({ setCategory, data, toggleModal, setToggleModal }) {
   const [{ category, link, video, photosDescription, content }] = dataJSON.filter(
     section => section?.category === "Weddings"
   );
@@ -28,6 +29,9 @@ export default function Weddings({ setCategory, data }) {
 
   return (
     <>
+      <AnimatePresence>
+        {toggleModal && <Modal setToggleModal={setToggleModal}>hej</Modal>}
+      </AnimatePresence>
       <div className="container">
         <Header>
           <Logo></Logo>

@@ -9,7 +9,6 @@ import "swiper/css";
 
 export default function SectionImages({ data, heading, photosDescription, content }) {
   const { matches } = useMatchMedia(screenSize);
-  console.log(data && data);
 
   return (
     <section className={styles.section}>

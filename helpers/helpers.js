@@ -1,5 +1,5 @@
 // useMediaQueries hook
-export const screenSize = "(max-width: 860px)";
+export const screenSize = "(max-width: 800px)";
 
 // Masonry Grid Image
 export const screenSizes = [
