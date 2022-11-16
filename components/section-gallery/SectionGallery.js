@@ -1,5 +1,4 @@
 import { useState, useEffect, Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
 import ImageGalleryDescription from "@components/image-gallery-description/ImageGalleryDescription";
 import Image from "next/image";
 import Spinner from "@components/spinner/Spinner";
@@ -26,7 +25,6 @@ export default function SectionGallery({ data, photosDescription }) {
 
   return (
     <>
-      <ErrorBoundary fallback={"An error has occured. Try again later"}>
         <Suspense fallback={<Spinner />}>
           {data?.photos?.map(({ id, src, alt }, i) => {
             return (
@@ -47,7 +45,6 @@ export default function SectionGallery({ data, photosDescription }) {
             );
           })}
         </Suspense>
-      </ErrorBoundary>
       <ImageGalleryDescription description={description} />
     </>
   );
