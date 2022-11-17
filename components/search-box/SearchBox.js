@@ -2,44 +2,51 @@ import { useState } from "react";
 import Button from "@components/button/Button";
 import styles from "./search-box.module.css";
 
-export default function SearchBox({ setCategory }) {
-  const [userInput, setUserInput] = useState("");
+export default function SearchBox({ setCategory, setNumOfPhotos }) {
+  const [categoryInput, setCategoryInput] = useState("");
+  const [selectInput, setSelectInput] = useState(10);
 
-  function handleCategory(e) {
-    setUserInput(e.target.value);
+  function handleNumOfPages(e) {
+    setNumOfPhotos(e.target.value);
   }
 
-  function handleSubmit(e, input) {
+  function handleCategory(e) {
     e.preventDefault();
-    setCategory(input);
-    setUserInput("");
+    setSelectInput(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setCategory(categoryInput);
+    setNumOfPhotos(selectInput);
+    setCategoryInput("");
   }
   return (
     <div className={styles.container}>
-      <div>
-        <label htmlFor="number of pages">Select number of images</label>
-        <select id="number of pages">
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option value="25">25</option>
-        </select>
-      </div>
-
-      <form onSubmit={e => handleSubmit(e, userInput)} className={styles.form}>
-        <label htmlFor="category">Category name</label>
-        <input
-          className={styles.input}
-          id="category"
-          type="text"
-          value={userInput}
-          onChange={handleCategory}
-          placeholder="e.g: wedding"
-          required
-        />
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div>
+          <label htmlFor="number of pages">Select number of images</label>
+          <select onChange={handleNumOfPages} id="number of pages" className={styles.select}>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="category">Category name</label>
+          <input
+            className={styles.input}
+            id="category"
+            type="text"
+            value={categoryInput}
+            onChange={handleCategory}
+            placeholder="e.g: wedding"
+            required
+          />
+        </div>
+        <Button>Submit</Button>
       </form>
-
-      <Button>Submit</Button>
     </div>
   );
 }
