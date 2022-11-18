@@ -13,7 +13,7 @@ export default function SectionGallery({ data, photosDescription }) {
     function isActive() {
       setSelected(prevNum => prevNum + 1);
 
-      if (selected >= data?.photos.length - 1) {
+      if (selected >= data?.photos?.length - 1) {
         setSelected(0);
       }
     }
