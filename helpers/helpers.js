@@ -13,5 +13,4 @@ export const links = [
   { name: "Home", to: "/", id: 1 },
   { name: "About", to: "/about", id: 2 },
   { name: "Portfolio", to: "/portfolio", id: 3 },
-  { name: "Blog", to: "#", id: 4 },
 ];

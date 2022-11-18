@@ -4,24 +4,24 @@
     "link": "url(/assets/images/w1.webp)",
     "category": "Weddings",
     "video": "/assets/videos/wedding_video.mp4",
-    "poster": "/assets/videos/",
-    "content": "This is section description",
+    "poster": "/assets/videos/posters/wedding_poster.webp",
+    "content": "Having a wedding vision in your head is one thing, but understanding how to effectively turn your ideas into a cohesive theme while also communicating your style to your wedding vendors is a different story. We’ve taken some of the most popular words to describe your wedding and broken them down into easy-to-understand definitions, so you can pinpoint your exact style in order to design the wedding of your dreams! Read more about the most popular wedding adjectives and aesthetics right here.",
     "photosDescription": [
       {
         "id": 0,
-        "description": "Description for image 1"
+        "description": "A wedding is a ceremony where two people are united in marriage. Wedding traditions and customs vary greatly between cultures, ethnic groups, religions, countries, and social classes."
       },
       {
         "id": 1,
-        "description": "Description for image 2"
+        "description": "Most wedding ceremonies involve an exchange of marriage vows by a couple, presentation of a gift (offering, rings, symbolic item, flowers, money, dress), and a public proclamation of marriage by an authority figure or celebrant."
       },
       {
         "id": 2,
-        "description": "Description for image 3"
+        "description": "Special wedding garments are often worn, and the ceremony is sometimes followed by a wedding reception. Music, poetry, prayers, or readings from religious texts or literature are also commonly incorporated into the ceremony, as well as superstitious customs."
       },
       {
         "id": 3,
-        "description": "Description for image 4"
+        "description": "Some cultures have adopted the traditional Western custom of the white wedding, in which a bride wears a white wedding dress and veil. This tradition was popularized through the marriage of Queen Victoria. Some say Victoria's choice of a white gown may have simply been a sign of extravagance, but may have also been influenced by the values she held which emphasized sexual purity."
       }
     ]
   },
@@ -30,24 +30,24 @@
     "link": "url(/assets/images/p1.webp)",
     "category": "Portraits",
     "video": "/assets/videos/portrait_video.mp4",
-    "poster": "/assets/videos/",
-    "content": "This is section description",
+    "poster": "/assets/videos/posters/portraits_poster.webp",
+    "content": "Portrait photography, or portraiture, is a type of photography aimed toward capturing the personality of a person or group of people by using effective lighting, backdrops, and poses. A portrait photograph may be artistic or clinical. Frequently, portraits are commissioned for special occasions, such as weddings, school events, or commercial purposes. Portraits can serve many purposes, ranging from usage on a personal web site to display in the lobby of a business",
     "photosDescription": [
       {
         "id": 0,
-        "description": "Description for image 1"
+        "description": "There are many different techniques for portrait photography. Often it is desirable to capture the subject's eyes and face in sharp focus while allowing other less important elements to be rendered in a soft focus. At other times, portraits of individual features might be the focus of a composition such as the hands, eyes or part of the subject's torso. "
       },
       {
         "id": 1,
-        "description": "Description for image 2"
+        "description": "The differences in types of portrait photography are mainly differences in technique. These techniques can be different lighting approaches, different backgrounds or settings, or different levels of involvement and connection between the photographer and the subject. In more creative portrait approaches, techniques can include digital or darkroom editing as well. "
       },
       {
         "id": 2,
-        "description": "Description for image 3"
+        "description": "Techniques for portrait photography include using a wide aperture (somewhere between f/2.8 and f/5.6) to create a shallow depth of field and focus on the subject; using leading lines in the background is another popular portrait technique that draws the eye subtly to the subject. A common lighting technique is to use diffusers and reflectors to bounce light onto the subject and intentionally create a mood or image."
       },
       {
         "id": 3,
-        "description": "Description for image 4"
+        "description": "Three common types of portrait photography are environmental portraits, which show subjects in their natural environment (their workplace, home, or place that represents them); candid portraits, which are similar to environmental portraits but are unplanned and spontaneous; and creative portrait photography, which uses techniques like digital manipulation to create the final portrait."
       }
     ]
   },
@@ -56,24 +56,24 @@
     "link": "url(/assets/images/b1.webp)",
     "category": "Business Photography",
     "video": "/assets/videos/business_video.mp4",
-    "poster": "/assets/videos/",
-    "content": "This is section description",
+    "poster": "/assets/videos/posters/bussiness_poster.webp",
+    "content": "Most business owners know the basics of what photography can do for them, but understanding how to approach photography as a part of your overall marketing game plan often requires the help of experienced professional photographers who are also dedicated to understanding your business offering and your customer base. There are many different types of photography, and how they can impact your business may surprise you. We can help define your photography needs and get the most out of the photographs we deliver.",
     "photosDescription": [
       {
         "id": 0,
-        "description": "Description for image 1"
+        "description": "It is safe to say that choosing the right photographic style for your product has more to do with understanding your customers as it does the product itself. The creative direction that goes into the product photo shoot should follow the same guidelines that went into its packaging."
       },
       {
         "id": 1,
-        "description": "Description for image 2"
+        "description": "Put simply, commercial photography means taking photos for business use. It's about creating images to help promote and sell products and services. These images can be featured in adverts, brochures, leaflets, merchandising and menus, to name just a few of their uses."
       },
       {
         "id": 2,
-        "description": "Description for image 3"
+        "description": "Photography businesses can have a high startup cost, but if you have a strong vision and a unique niche, it’s a great place to nurture both creativity and business skills. Being the owner of a photography business can also be really rewarding because you might end up photographing the best day of someone’s life."
       },
       {
         "id": 3,
-        "description": "Description for image 4"
+        "description": "If you’re working on headshots, that could also create a big change or success for your client. Nature photographers also capture some of the most beautiful moments in the world. Even with all of the startup costs, a photography business creates and memorializes priceless moments."
       }
     ]
   },
@@ -82,24 +82,24 @@
     "link": "url(/assets/images/e1.webp)",
     "category": "Events and Festivals",
     "video": "/assets/videos/events_video.mp4",
-    "poster": "/assets/videos/",
-    "content": "This is section description",
+    "poster": "/assets/videos/posters/events_poster.webp",
+    "content": "Event photography is the professional art of snapping high-quality images during a wide variety of important occasions, from personal events like weddings or birthday parties to large public gatherings like corporate events, galas, award ceremonies and music festivals.",
     "photosDescription": [
       {
         "id": 0,
-        "description": "Description for image 1"
+        "description": "What makes event photography unique, the fact that it’s all about capturing an event that’s unfolding around you, is also what makes it challenging at first if you’ve only shot in a controlled environment."
       },
       {
         "id": 1,
-        "description": "Description for image 2"
+        "description": "When you’re starting out, you’ll most likely market yourself as a general event photographer. As you get more gigs under your belt, you might find that there is one kind of event photography that you’re particularly good at or that you enjoy. At that point, you can specialize in one of the many different kinds of professional event photography."
       },
       {
         "id": 2,
-        "description": "Description for image 3"
+        "description": "Event photography is important because it gives your event or business credibility. It also provides a lot of great material for marketing and makes your business look professional and reliable. Good event photographers can provide images that can be used again to promote a business. "
       },
       {
         "id": 3,
-        "description": "Description for image 4"
+        "description": "Event photography could be a very dynamic activity, but how do you capture movement in photography? Or how do you freeze a fast moving object? These are two essential questions that will be answered in this Photography workshop on camera technique."
       }
     ]
   },
@@ -108,8 +108,8 @@
     "link": "url(/assets/images/pp1.webp)",
     "category": "Themed",
     "video": "/assets/videos/themed_video.mp4",
-    "poster": "/assets/videos/",
-    "content": "This is section description",
+    "poster": "/assets/videos/posters/themed_poster.webp",
+    "content": "A photography theme – sometimes called a prompt – is a visual element you look for when you shoot. The idea is that it runs through and links the individual pictures in your set or project. What that prompt is, is entirely up to you.",
     "photosDescription": [
       {
         "id": 0,
@@ -134,8 +134,8 @@
     "link": "url(/assets/images/t1.webp)",
     "category": "Properties and Interiors",
     "video": "/assets/videos/property_video.mp4",
-    "poster": "/assets/videos/",
-    "content": "This is section description",
+    "poster": "/assets/videos/posters/properties_poster.webp",
+    "content": "What is property photography? Taking photos of any building or structure could class as property photography. More specifically, it usually relates to the taking of images by – or to be used by – estate agents. These professional quality images are normally used in print brochures and on websites..",
     "photosDescription": [
       {
         "id": 0,
