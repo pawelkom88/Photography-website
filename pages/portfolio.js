@@ -1,5 +1,6 @@
 // hooks
 import { Suspense, lazy } from "react";
+import { AnimatePresence } from "framer-motion";
 
 // components
 import Header from "@layout/header/Header";
@@ -7,13 +8,22 @@ import Hamburger from "@components/hamburger/Hamburger";
 import Logo from "@components/logo/Logo";
 import Spinner from "@components/spinner/Spinner";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import styles from "@styles/main.module.css";
+import Modal from "@components/modal/Modal";
 
 // helpers
 import { screenSizes } from "helpers/helpers";
 import SearchBox from "@components/search-box/SearchBox";
 
-export default function Portfolio({ setNumOfPages, setCategory, data }) {
+// styles
+import styles from "@styles/main.module.css";
+
+export default function Portfolio({
+  setNumOfPhotos,
+  setCategory,
+  data,
+  toggleModal,
+  setToggleModal,
+}) {
   const GridImage = lazy(() => import("@components/grid-image/GridImage"));
 
   // create dynamic breakpoints for grid
@@ -27,17 +37,19 @@ export default function Portfolio({ setNumOfPages, setCategory, data }) {
         <Logo />
         <Hamburger />
       </Header>
-      <SearchBox setCategory={setCategory} setNumOfPages={setNumOfPages} />
+      <SearchBox setCategory={setCategory} setNumOfPhotos={setNumOfPhotos} />
       <main className={`${styles.main}`}>
-        {/* component modal ? */}
-        {data && data.photos.length === 0 && (
-          <p style={{ textAlign: "center" }}>Could not find any photos{category}</p>
-        )}
+        <AnimatePresence>
+          {toggleModal && (
+            <Modal setToggleModal={setToggleModal}>{(data && data.error) || data.code}</Modal>
+          )}
+        </AnimatePresence>
+        {data && !data.photos.length && <p style={{ textAlign: "center" }}>Bad query. Try again</p>}
         <Suspense fallback={<Spinner />}>
           <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
             <Masonry gutter="20px">
               {data ? (
-                data.photos.map(image => {
+                data?.photos?.map(image => {
                   return <GridImage key={image.id} image={image} />;
                 })
               ) : (

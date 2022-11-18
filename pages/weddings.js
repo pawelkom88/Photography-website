@@ -18,7 +18,7 @@ import styles from "@styles/marquee.module.css";
 import dataJSON from "@helpers/data";
 
 export default function Weddings({ setCategory, data, toggleModal, setToggleModal }) {
-  const [{ category, link, video, photosDescription, content }] = dataJSON.filter(
+  const [{ category, link, video, photosDescription, content, poster }] = dataJSON.filter(
     section => section?.category === "Weddings"
   );
 
@@ -30,7 +30,7 @@ export default function Weddings({ setCategory, data, toggleModal, setToggleModa
   return (
     <>
       <AnimatePresence>
-        {toggleModal && <Modal setToggleModal={setToggleModal}>hej</Modal>}
+        {toggleModal && <Modal setToggleModal={setToggleModal}>{data && data.error}</Modal>}
       </AnimatePresence>
       <div className="container">
         <Header>
@@ -38,15 +38,24 @@ export default function Weddings({ setCategory, data, toggleModal, setToggleModa
           <Hamburger />
         </Header>
       </div>
-      <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
-      <SectionDescribtion title={category} />
-      <SectionImages
-        data={data}
-        heading={category}
-        photosDescription={photosDescription}
-        category={category}
-        content={content}
+      <SectionHero
+        section={category}
+        imageSrc={link.slice(4, -1)}
+        videoSrc={video}
+        poster={poster}
       />
+      <SectionDescribtion title={category} />
+      {data?.photos ? (
+        <SectionImages
+          data={data}
+          heading={category}
+          photosDescription={photosDescription}
+          category={category}
+          content={content}
+        />
+      ) : (
+        ""
+      )}
       <Marquee style={{ marginTop: "7rem" }} className={styles.marquee} speed={60}>
         {category}
       </Marquee>
