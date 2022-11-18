@@ -15,9 +15,8 @@ import styles from "@styles/marquee.module.css";
 // helpers
 import dataJSON from "@helpers/data";
 
-
-export default function PropertiesAndInteriors({ setCategory, data }) {
-  const [{ category, link, video, photosDescription }] = dataJSON.filter(
+export default function PropertiesAndInteriors({ setCategory, data, poster }) {
+  const [{ category, link, video, photosDescription, content }] = dataJSON.filter(
     section => section.category === "Properties and Interiors"
   );
 
@@ -31,12 +30,18 @@ export default function PropertiesAndInteriors({ setCategory, data }) {
       <div className="container">
         <Header>
           <Logo></Logo>
-          <Hamburger/>
+          <Hamburger />
         </Header>
       </div>
-      <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
+      <SectionHero
+        poster={poster}
+        section={category}
+        imageSrc={link.slice(4, -1)}
+        videoSrc={video}
+      />
       <SectionDescribtion title={category} />
       <SectionImages
+        content={content}
         data={data}
         heading={category}
         photosDescription={photosDescription}

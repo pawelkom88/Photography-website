@@ -15,9 +15,8 @@ import styles from "@styles/marquee.module.css";
 // helpers
 import dataJSON from "@helpers/data";
 
-
 export default function Business({ setCategory, data }) {
-  const [{ category, link, video, photosDescription }] = dataJSON.filter(
+  const [{ category, link, video, photosDescription, content, poster }] = dataJSON.filter(
     section => section.category === "Business Photography"
   );
 
@@ -34,9 +33,16 @@ export default function Business({ setCategory, data }) {
           <Hamburger />
         </Header>
       </div>
-      <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
+
+      <SectionHero
+        poster={poster}
+        section={category}
+        imageSrc={link.slice(4, -1)}
+        videoSrc={video}
+      />
       <SectionDescribtion title={category} />
       <SectionImages
+        content={content}
         data={data}
         heading={category}
         photosDescription={photosDescription}

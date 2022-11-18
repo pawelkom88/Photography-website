@@ -16,7 +16,7 @@ import styles from "@styles/marquee.module.css";
 import dataJSON from "@helpers/data";
 
 export default function Events({ setCategory, data }) {
-  const [{ category, link, video, photosDescription }] = dataJSON.filter(
+  const [{ category, link, video, photosDescription, content, poster }] = dataJSON.filter(
     section => section.category === "Events and Festivals"
   );
 
@@ -33,9 +33,15 @@ export default function Events({ setCategory, data }) {
           <Hamburger />
         </Header>
       </div>
-      <SectionHero section={category} imageSrc={link.slice(4, -1)} videoSrc={video} />
+      <SectionHero
+        poster={poster}
+        section={category}
+        imageSrc={link.slice(4, -1)}
+        videoSrc={video}
+      />
       <SectionDescribtion title={category} />
       <SectionImages
+        content={content}
         data={data}
         heading={category}
         photosDescription={photosDescription}
