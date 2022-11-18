@@ -7,12 +7,11 @@ export default function SearchBox({ setCategory, setNumOfPhotos }) {
   const [selectInput, setSelectInput] = useState(10);
 
   function handleNumOfPages(e) {
-    setNumOfPhotos(e.target.value);
+    setSelectInput(e.target.value);
   }
 
   function handleCategory(e) {
-    e.preventDefault();
-    setSelectInput(e.target.value);
+    setCategoryInput(e.target.value);
   }
 
   function handleSubmit(e) {
@@ -21,6 +20,8 @@ export default function SearchBox({ setCategory, setNumOfPhotos }) {
     setNumOfPhotos(selectInput);
     setCategoryInput("");
   }
+
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.form}>
