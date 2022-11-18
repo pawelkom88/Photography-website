@@ -19,8 +19,27 @@
 }
 
 .content {
-  font-size: 1.3rem;
+  position: relative;
+  font-size: 1rem;
   font-style: italic;
   line-height: 1.8;
   text-align: center;
+  padding: 1rem;
+}
+
+.content::after,
+.content::before {
+  content: url("/assets/icons/quote.svg");
+  position: absolute;
+}
+
+.content::after {
+  top: -5px;
+  right: -5px;
+}
+
+.content::before {
+  content: url("/assets/icons/quote.svg");
+  bottom: 0;
+  left: 0;
 }
