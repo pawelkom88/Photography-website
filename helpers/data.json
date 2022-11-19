@@ -4,7 +4,7 @@
     "link": "url(/assets/images/w1.webp)",
     "category": "Weddings",
     "video": "/assets/videos/wedding_video.mp4",
-    "poster": "/assets/videos/posters/wedding_poster.webp",
+    "poster": "/assets/posters/wedding_poster.webp",
     "content": "Having a wedding vision in your head is one thing, but understanding how to effectively turn your ideas into a cohesive theme while also communicating your style to your wedding vendors is a different story. We’ve taken some of the most popular words to describe your wedding and broken them down into easy-to-understand definitions, so you can pinpoint your exact style in order to design the wedding of your dreams! Read more about the most popular wedding adjectives and aesthetics right here.",
     "photosDescription": [
       {
@@ -30,7 +30,7 @@
     "link": "url(/assets/images/p1.webp)",
     "category": "Portraits",
     "video": "/assets/videos/portrait_video.mp4",
-    "poster": "/assets/videos/posters/portraits_poster.webp",
+    "poster": "/assets/posters/portraits_poster.webp",
     "content": "Portrait photography, or portraiture, is a type of photography aimed toward capturing the personality of a person or group of people by using effective lighting, backdrops, and poses. A portrait photograph may be artistic or clinical. Frequently, portraits are commissioned for special occasions, such as weddings, school events, or commercial purposes. Portraits can serve many purposes, ranging from usage on a personal web site to display in the lobby of a business",
     "photosDescription": [
       {
@@ -56,7 +56,7 @@
     "link": "url(/assets/images/b1.webp)",
     "category": "Business Photography",
     "video": "/assets/videos/business_video.mp4",
-    "poster": "/assets/videos/posters/bussiness_poster.webp",
+    "poster": "/assets/posters/bussiness_poster.webp",
     "content": "Most business owners know the basics of what photography can do for them, but understanding how to approach photography as a part of your overall marketing game plan often requires the help of experienced professional photographers who are also dedicated to understanding your business offering and your customer base. There are many different types of photography, and how they can impact your business may surprise you. We can help define your photography needs and get the most out of the photographs we deliver.",
     "photosDescription": [
       {
@@ -82,7 +82,7 @@
     "link": "url(/assets/images/e1.webp)",
     "category": "Events and Festivals",
     "video": "/assets/videos/events_video.mp4",
-    "poster": "/assets/videos/posters/events_poster.webp",
+    "poster": "/assets/posters/events_poster.webp",
     "content": "Event photography is the professional art of snapping high-quality images during a wide variety of important occasions, from personal events like weddings or birthday parties to large public gatherings like corporate events, galas, award ceremonies and music festivals.",
     "photosDescription": [
       {
@@ -108,7 +108,7 @@
     "link": "url(/assets/images/pp1.webp)",
     "category": "Themed",
     "video": "/assets/videos/themed_video.mp4",
-    "poster": "/assets/videos/posters/themed_poster.webp",
+    "poster": "/assets/posters/themed_poster.webp",
     "content": "A photography theme – sometimes called a prompt – is a visual element you look for when you shoot. The idea is that it runs through and links the individual pictures in your set or project. What that prompt is, is entirely up to you.",
     "photosDescription": [
       {
@@ -134,7 +134,7 @@
     "link": "url(/assets/images/t1.webp)",
     "category": "Properties and Interiors",
     "video": "/assets/videos/property_video.mp4",
-    "poster": "/assets/videos/posters/properties_poster.webp",
+    "poster": "/assets/posters/properties_poster.webp",
     "content": "What is property photography? Taking photos of any building or structure could class as property photography. More specifically, it usually relates to the taking of images by – or to be used by – estate agents. These professional quality images are normally used in print brochures and on websites..",
     "photosDescription": [
       {
