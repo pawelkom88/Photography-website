@@ -1,5 +1,5 @@
 // hooks
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, memo } from "react";
 import { AnimatePresence } from "framer-motion";
 
 // components
@@ -17,6 +17,8 @@ import SearchBox from "@components/search-box/SearchBox";
 // styles
 import styles from "@styles/main.module.css";
 
+const MemoizedSearchBox = memo(SearchBox);
+
 export default function Portfolio({
   setNumOfPhotos,
   setCategory,
@@ -25,12 +27,11 @@ export default function Portfolio({
   setToggleModal,
 }) {
   const GridImage = lazy(() => import("@components/grid-image/GridImage"));
-
+  console.info("render PORTFOLIO");
   // create dynamic breakpoints for grid
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };
   });
-
 
   return (
     <div className="container">
@@ -38,7 +39,7 @@ export default function Portfolio({
         <Logo />
         <Hamburger />
       </Header>
-      <SearchBox setCategory={setCategory} setNumOfPhotos={setNumOfPhotos} />
+      <MemoizedSearchBox setCategory={setCategory} setNumOfPhotos={setNumOfPhotos} />
       <main className={`${styles.main}`}>
         <AnimatePresence>
           {toggleModal && (
@@ -49,17 +50,15 @@ export default function Portfolio({
           <p style={{ textAlign: "center" }}>Bad query. Try again</p>
         )}
         <Suspense fallback={<Spinner />}>
-          <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
-            <Masonry gutter="20px">
-              {data ? (
-                data?.photos?.map(image => {
-                  return <GridImage key={image.id} image={image} />;
-                })
-              ) : (
-                <></>
-              )}
-            </Masonry>
-          </ResponsiveMasonry>
+          {data && (
+            <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
+              <Masonry gutter="20px">
+                {data?.photos?.map(image => (
+                  <GridImage key={image.id} image={image} />
+                ))}
+              </Masonry>
+            </ResponsiveMasonry>
+          )}
         </Suspense>
       </main>
     </div>
