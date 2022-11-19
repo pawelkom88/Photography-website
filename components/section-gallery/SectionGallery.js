@@ -6,9 +6,9 @@ import styles from "./section-gallery.module.css";
 
 export default function SectionGallery({ data, photosDescription }) {
   const [selected, setSelected] = useState(0);
-
   const [{ description }] = photosDescription.filter(({ id }) => id === selected);
 
+  // every 6 s add active class to a different image
   useEffect(() => {
     function isActive() {
       setSelected(prevNum => prevNum + 1);
@@ -21,7 +21,7 @@ export default function SectionGallery({ data, photosDescription }) {
     const timer = setTimeout(isActive, 6000);
 
     return () => clearTimeout(timer);
-  }, [selected, data?.photos?.length]);
+  }, [selected, data.photos.length]);
 
   return (
     <>

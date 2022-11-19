@@ -15,12 +15,19 @@ const variants = {
   },
 };
 
+// Use local storage control video played in hero section. It starts only when user first visit the route
+let initialState;
+
 export default function SectionHero({ videoSrc, imageSrc, section, poster }) {
+  const [isSSR, setIsSSR] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(initialState);
   const router = useRouter();
   const pathName = router.pathname;
 
-  // Use local storage control video, start it only when user first visit the route
-  let initialState;
+  // In order to prevent the first render from being different I use `useEffect` which is only executed in the browser and is executed during hydration.
+  useEffect(() => {
+    setIsSSR(false);
+  }, []);
 
   // retrieve a key from local storage
   if (typeof window !== "undefined" && localStorage.getItem(pathName)) {
@@ -32,16 +39,14 @@ export default function SectionHero({ videoSrc, imageSrc, section, poster }) {
     initialState = true;
   }
 
-  const [isPlaying, setIsPlaying] = useState(initialState);
-
   useEffect(() => {
-    // Add an object to a local storage based on route path
-    localStorage.setItem(pathName, JSON.stringify(pathName));
+    // Add a key  to a local storage based on route path when isPlaying state changes (when video ends - check below)
+    localStorage.setItem(pathName, pathName);
   }, [pathName, isPlaying]);
 
   return (
     <section className={styles.section}>
-      {!isPlaying ? (
+      {!isSSR && !isPlaying ? (
         <motion.div key="image" initial="initial" animate="animate" variants={variants}>
           <Image
             layout="fill"
@@ -54,18 +59,16 @@ export default function SectionHero({ videoSrc, imageSrc, section, poster }) {
           />
         </motion.div>
       ) : (
-        <>
-          <video
-            onEnded={() => setIsPlaying(false)}
-            className={styles.video}
-            muted={true}
-            preload="auto"
-            autoPlay="autoplay"
-            poster={poster}
-            type="video/mp4">
-            <source src={videoSrc} />
-          </video>
-        </>
+        <video
+          onEnded={() => setIsPlaying(false)}
+          className={styles.video}
+          muted={true}
+          preload="none"
+          poster={poster}
+          autoPlay="autoplay"
+          type="video/mp4">
+          <source src={videoSrc} />
+        </video>
       )}
       <h2 className={styles["section-heading"]}>{section}</h2>
     </section>

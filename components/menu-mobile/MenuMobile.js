@@ -7,6 +7,7 @@ import { links } from "@helpers/helpers";
 import styles from "./menu-mobile.module.css";
 
 export default function MenuMobile({ isOpen, setIsOpen }) {
+  // Add class based on a state - direct DOM manipulation which is not a good practise, but could not find better solution so far
   useEffect(() => {
     if (!isOpen) {
       document.querySelector("body").classList.remove("hidden");
