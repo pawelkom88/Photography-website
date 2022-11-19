@@ -116,3 +116,13 @@ select {
 .hidden {
   overflow: hidden;
 }
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  /* opacity: 1; */
+  background-color: var(--secondary-clr);
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--secondary-clr);
+}
