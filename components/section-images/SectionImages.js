@@ -19,7 +19,7 @@ export default function SectionImages({ data, heading, photosDescription, conten
               style={{
                 height: "50vh",
               }}>
-              {data?.photos?.map(({ id, src, alt }) => {
+              {data?.photos?.map(({ id, src, alt }, index) => {
                 return (
                   <SwiperSlide key={id}>
                     <Image
@@ -30,6 +30,9 @@ export default function SectionImages({ data, heading, photosDescription, conten
                       placeholder="blur"
                       blurDataURL={src.tiny}
                     />
+                    <span className={styles["current-image"]}>
+                      {index + 1} / {data?.photos?.length}
+                    </span>
                   </SwiperSlide>
                 );
               })}
