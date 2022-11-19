@@ -18,11 +18,11 @@ import "styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
   const [toggleModal, setToggleModal] = useState(false);
-  const [numOfPages, setNumOfPages] = useState(4);
+  const [numOfPhotos, setNumOfPhotos] = useState(4);
   const [category, setCategory] = useState("people");
   const { openGraph, twitter } = SEO;
   const { data, error } = useFetch(
-    `https://api.pexels.com/v1/search?query=${category}&per_page=${numOfPages}`
+    `https://api.pexels.com/v1/search?query=${category}&per_page=${numOfPhotos}`
   );
 
   useEffect(() => {
@@ -30,6 +30,15 @@ function MyApp({ Component, pageProps, router }) {
       setToggleModal(true);
     }
   }, [error, setToggleModal]);
+
+  useEffect(() => {
+    if (router.pathname === "/") return;
+    if (router.pathname === "/portfolio") {
+      setNumOfPhotos(15);
+    } else {
+      setNumOfPhotos(4);
+    }
+  }, [router.pathname]);
 
   return (
     <>
@@ -41,7 +50,7 @@ function MyApp({ Component, pageProps, router }) {
             error={error}
             data={data}
             setCategory={setCategory}
-            setNumOfPages={setNumOfPages}
+            setNumOfPhotos={setNumOfPhotos}
             toggleModal={toggleModal}
             setToggleModal={setToggleModal}
           />
