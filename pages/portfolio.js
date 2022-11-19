@@ -27,7 +27,6 @@ export default function Portfolio({
   setToggleModal,
 }) {
   const GridImage = lazy(() => import("@components/grid-image/GridImage"));
-  console.info("render PORTFOLIO");
   // create dynamic breakpoints for grid
   const [mobile, tablet, desktop] = screenSizes.map(({ res, columnNum }) => {
     return { [res]: columnNum };
