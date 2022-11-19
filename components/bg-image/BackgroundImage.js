@@ -6,6 +6,7 @@ export default function BackgroundImage({ onHover, position }) {
   return (
     <>
       {dataJSON.map(({ id, link, category }, index) => {
+        // display right bg image for right category and set a dynamic class
         const categoryBgImage = onHover && position === index ? styles.on : styles.off;
 
         return (
