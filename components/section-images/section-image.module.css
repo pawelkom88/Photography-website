@@ -86,22 +86,3 @@
     grid-row: 4/5;
   }
 }
-
-.current-image {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  font-size: 1rem;
-  font-family: var(--secondary-font);
-  color: var(--secondary-clr);
-}
-
-.current-image::after {
-  content: url("/assets/icons/arrow1.svg");
-}
-
-.current-image::before {
-  content: url("/assets/icons/arrow2.svg");
-}
