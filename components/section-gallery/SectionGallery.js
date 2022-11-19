@@ -21,7 +21,7 @@ export default function SectionGallery({ data, photosDescription }) {
     const timer = setTimeout(isActive, 6000);
 
     return () => clearTimeout(timer);
-  }, [selected, data.photos.length]);
+  }, [selected, data?.photos?.length]);
 
   return (
     <>
