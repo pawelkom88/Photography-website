@@ -31,6 +31,7 @@ export default function Portfolio({
     return { [res]: columnNum };
   });
 
+
   return (
     <div className="container">
       <Header>
@@ -41,10 +42,12 @@ export default function Portfolio({
       <main className={`${styles.main}`}>
         <AnimatePresence>
           {toggleModal && (
-            <Modal setToggleModal={setToggleModal}>{(data && data.error) || data.code}</Modal>
+            <Modal setToggleModal={setToggleModal}>{(data && data?.error) || data?.code}</Modal>
           )}
         </AnimatePresence>
-        {data && !data.photos.length && <p style={{ textAlign: "center" }}>Bad query. Try again</p>}
+        {data && !data?.error && !data?.photos?.length && (
+          <p style={{ textAlign: "center" }}>Bad query. Try again</p>
+        )}
         <Suspense fallback={<Spinner />}>
           <ResponsiveMasonry columnsCountBreakPoints={{ ...mobile, ...tablet, ...desktop }}>
             <Masonry gutter="20px">
