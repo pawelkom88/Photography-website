@@ -34,7 +34,7 @@ export default function Weddings({ setCategory, data, toggleModal, setToggleModa
       </AnimatePresence>
       <div className="container">
         <Header>
-          <Logo></Logo>
+          <Logo/>
           <Hamburger />
         </Header>
       </div>

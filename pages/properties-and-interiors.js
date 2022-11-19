@@ -29,7 +29,7 @@ export default function PropertiesAndInteriors({ setCategory, data, poster }) {
     <>
       <div className="container">
         <Header>
-          <Logo></Logo>
+          <Logo/>
           <Hamburger />
         </Header>
       </div>

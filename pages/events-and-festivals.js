@@ -29,7 +29,7 @@ export default function Events({ setCategory, data }) {
     <>
       <div className="container">
         <Header>
-          <Logo></Logo>
+          <Logo/>
           <Hamburger />
         </Header>
       </div>
